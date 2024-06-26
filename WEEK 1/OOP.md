@@ -56,7 +56,11 @@
 * Abstraction: Lớp LibraryItem là lớp trừu tượng.
 * SRP: Mỗi lớp chỉ có một trách nhiệm duy nhất.
 * OCP: Lớp LibraryItem có thể mở rộng bằng cách thêm các lớp con mới mà không cần thay đổi lớp hiện tại.
-* LSP: Các đối tượng -rrowable được tách riêng.
+* LSP: Các đối tượng của Book và Magazine có thể thay thế cho LibraryItem.
+* ISP: Giao diện Borrowable được tách riêng.
 * DIP: LibrarySystem phụ thuộc vào abstraction là LibraryDatabase.
 
-Code:
+Code: https://github.com/NgaLe02/VCCORP/tree/main/WEEK%201/VCCORP_OOP
+
+UML:
+![alt text](UML.png)
