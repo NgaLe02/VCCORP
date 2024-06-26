@@ -46,19 +46,28 @@
   Abstraction không nên phụ thuộc vào chi tiết mà ngược lại
 
   2.3 Khái niệm interface: là 1 lớp trừu tượng (abstract class) mà dùng để nhóm các phương thức (Method) liên quan với nhau mà không có logic.
-  2.4 Từ khóa static:
+  2.4 Khái niệm static:
+
+- Từ khóa static được sử dụng để khai báo các thành phần thuộc về lớp thay vì đối tượng của lớp.
+  => Điều này có nghĩa là các thành phần static có thể được truy cập mà không cần phải tạo một thể hiện (instance) của lớp đó
+- Các thành phần static:
+
+* Biến static
+* Phương thức static
+* Khối lệnh static
+* Lớp lồng nhau static
 
   2.5 Trình bày đã áp dụng OOP trong chương trình đã xây dựng:
 
-* Encapsulation: Các thuộc tính id, title, author, issueNumber được đóng gói trong các lớp.
-* Inheritance: Book và Magazine kế thừa từ lớp LibraryItem.
-* Polymorphism: Sử dụng phương thức displayInfo() đa hình.
-* Abstraction: Lớp LibraryItem là lớp trừu tượng.
-* SRP: Mỗi lớp chỉ có một trách nhiệm duy nhất.
-* OCP: Lớp LibraryItem có thể mở rộng bằng cách thêm các lớp con mới mà không cần thay đổi lớp hiện tại.
-* LSP: Các đối tượng của Book và Magazine có thể thay thế cho LibraryItem.
-* ISP: Giao diện Borrowable được tách riêng.
-* DIP: LibrarySystem phụ thuộc vào abstraction là LibraryDatabase.
+- Encapsulation: Các thuộc tính id, title, author, issueNumber được đóng gói trong các lớp.
+- Inheritance: Book và Magazine kế thừa từ lớp LibraryItem.
+- Polymorphism: Sử dụng phương thức displayInfo() đa hình.
+- Abstraction: Lớp LibraryItem là lớp trừu tượng.
+- SRP: Mỗi lớp chỉ có một trách nhiệm duy nhất.
+- OCP: Lớp LibraryItem có thể mở rộng bằng cách thêm các lớp con mới mà không cần thay đổi lớp hiện tại.
+- LSP: Các đối tượng của Book và Magazine có thể thay thế cho LibraryItem.
+- ISP: Giao diện Borrowable được tách riêng.
+- DIP: LibrarySystem phụ thuộc vào abstraction là LibraryDatabase.
 
 Code: https://github.com/NgaLe02/VCCORP/tree/main/WEEK%201/VCCORP_OOP
 
