@@ -1,4 +1,4 @@
-1. Các công việc đã làm:
+## Các công việc đã làm:
 
 - Tìm hiểu 4 tính chất của OOP
 - Tìm hiểu 5 tính chất của SOLID
@@ -6,59 +6,62 @@
 - Viết trương trình java đọc ghi file theo 2 dạng binary và text
 - Viết trương trình java thao tác với file và thư mục: list các file, đọc nội dung file
 
-2. Kết quả công việc:
+## Kết quả công việc:
 
-2.1 4 tính chất của OOP:
+- tính chất của OOP:
 
-- Tính trừu tượng (Abstraction )
-  Ẩn các chi tiết hoặc quy trình bên trong khỏi người dùng. Điều này được thực hiện bằng cách tạo các class đại diện các đối tượng trong thế giới thực và các thuộc tính của chúng.
+  - Tính trừu tượng (Abstraction ):
+    Ẩn các chi tiết hoặc quy trình bên trong khỏi người dùng. Điều này được thực hiện bằng cách tạo các class đại diện các đối tượng trong thế giới thực và các thuộc tính của chúng.
 
-- Tính đóng gói (Encapsulation )
-  Tính đóng gói cho phép che giấu thông tin và những tính chất xử lý bên trong của đối tượng. Các đối tượng khác không thể tác động trực tiếp đến dữ liệu bên trong và làm thay đổi trạng thái của đối tượng mà bắt buộc phải thông qua các phương thức công khai (method public) do đối tượng đó cung cấp.
+  - Tính đóng gói (Encapsulation ):
 
-  Tính chất này giúp tăng tính bảo mật cho đối tượng và tránh tình trạng dữ liệu bị hư hỏng ngoài ý muốn.
+    - Tính đóng gói cho phép che giấu thông tin và những tính chất xử lý bên trong của đối tượng. Các đối tượng khác không thể tác động trực tiếp đến dữ liệu bên trong và làm thay đổi trạng thái của đối tượng mà bắt buộc phải thông qua các phương thức công khai (method public) do đối tượng đó cung cấp.
 
-- Tính kế thừa (Inheritance)
-  Khi một lớp kế thừa các phương thức và thuộc tính của một lớp khác
-  Điều này giúp tái sự dung code và dễ dàng them các đặc điểm mới.
+    - Tính chất này giúp tăng tính bảo mật cho đối tượng và tránh tình trạng dữ liệu bị hư hỏng ngoài ý muốn.
 
-- Tính đa hình (Polymorphism)
-  Cho phép tạo a các phương thức (method) với tên going nhau nhưng với các cách triển khai khác nhau.
+  - Tính kế thừa (Inheritance)
 
-  Điều này giúp tạo ra các hệ thống linh hoạt, dễ hiểu và dễ bảo trì hơn.
+    - Khi một lớp kế thừa các phương thức và thuộc tính của một lớp khác
+    - Điều này giúp tái sự dung code và dễ dàng them các đặc điểm mới.
 
-  2.2 5 tính chất của SOLID:
+  - Tính đa hình (Polymorphism)
 
-- Single Responsibility
+    - Cho phép tạo a các phương thức (method) với tên going nhau nhưng với các cách triển khai khác nhau.
+
+    - Điều này giúp tạo ra các hệ thống linh hoạt, dễ hiểu và dễ bảo trì hơn.
+
+## Tính chất của SOLID:
+
+- Single Responsibility:
   Một class chỉ nên chịu 1 trách nhiệm duy nhất.
-- Open/Closed.
+- Open/Closed:
   Class chỉ nên mở cho việc mở rộng nhưng đóng cho việc chỉnh sửa (open for extension/ closed for modification)
   Có 1 ngoại lệ trong quy tắc này khi tồn tại bug trong code có sẵn.
-- Liskov Substitution.
+- Liskov Substitution:
   Bất cứ instance nào của class cha cũng có thể được thay thế bởi instance của class con của nó mà không làm thay đổi tính đúng đắn của chương trình.
-- Interface Segregation.
+- Interface Segregation:
   Thay vì dùng 1 interface lớn, ta nên tách thành nhiều interface nhỏ, với nhiều mục đích cụ thể.
   Bằng cách đó, chúng ta có thể đảm bảo rằng các class chỉ cần quan tâm đến các phương thức (method) mà chúng quan tâm;
 
-- Dependency Inversion.
-  Các module cấp cao không phụ thuộc vào các module cấp thấp.
-  Cả 2 nên phụ thuộc vào abstraction.
-  Abstraction không nên phụ thuộc vào chi tiết mà ngược lại
+- Dependency Inversion:
+  - Các module cấp cao không phụ thuộc vào các module cấp thấp.
+  - Cả 2 nên phụ thuộc vào abstraction.
+  - Abstraction không nên phụ thuộc vào chi tiết mà ngược lại
 
-  2.3 Khái niệm interface: là 1 lớp trừu tượng (abstract class) mà dùng để nhóm các phương thức (Method) liên quan với nhau mà không có logic.
-  2.4 Khái niệm static:
+## Khái niệm interface: là 1 lớp trừu tượng (abstract class) mà dùng để nhóm các phương thức (Method) liên quan với nhau mà không có logic.
 
-  2.5 Từ khóa static được sử dụng để khai báo các thành phần thuộc về lớp thay vì đối tượng của lớp.
-  => Điều này có nghĩa là các thành phần static có thể được truy cập mà không cần phải tạo một thể hiện (instance) của lớp đó
+## Từ khóa static được sử dụng để khai báo các thành phần thuộc về lớp thay vì đối tượng của lớp.
+
+=> Điều này có nghĩa là các thành phần static có thể được truy cập mà không cần phải tạo một thể hiện (instance) của lớp đó
 
 - Các thành phần static:
 
-* Biến static
-* Phương thức static
-* Khối lệnh static
-* Lớp lồng nhau static
+  - Biến static
+  - Phương thức static
+  - Khối lệnh static
+  - Lớp lồng nhau static
 
-  2.5 Trình bày đã áp dụng OOP trong chương trình đã xây dựng:
+## Trình bày đã áp dụng OOP trong chương trình đã xây dựng:
 
 - Encapsulation: Các thuộc tính id, title, author, issueNumber được đóng gói trong các lớp.
 - Inheritance: Book và Magazine kế thừa từ lớp LibraryItem.
