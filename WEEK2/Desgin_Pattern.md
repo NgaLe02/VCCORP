@@ -62,7 +62,8 @@ public class Singleton {
     }
     
     // các phương thức và thuộc tính khác của Singleton
-}```
+}
+```
 
   ## Adapter Pattern
 
