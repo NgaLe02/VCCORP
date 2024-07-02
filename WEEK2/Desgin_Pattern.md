@@ -29,3 +29,5 @@
   - Strategy Pattern
   - Template Pattern
   - Visitor Pattern
+
+https://chatgpt.com/c/5dcb8815-58c4-458a-9b3b-006788bbc0a4
