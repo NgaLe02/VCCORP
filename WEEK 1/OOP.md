@@ -52,7 +52,9 @@
 
 - là 1 lớp trừu tượng (abstract class) mà dùng để nhóm các phương thức (Method) liên quan với nhau mà không có logic.
 
-## Từ khóa static được sử dụng để khai báo các thành phần thuộc về lớp thay vì đối tượng của lớp.
+## Từ khóa static:
+
+- được sử dụng để khai báo các thành phần thuộc về lớp thay vì đối tượng của lớp.
 
 => Điều này có nghĩa là các thành phần static có thể được truy cập mà không cần phải tạo một thể hiện (instance) của lớp đó
 
