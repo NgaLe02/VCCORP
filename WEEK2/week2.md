@@ -93,13 +93,13 @@ Truy cập phần tử nhanh theo chỉ số.
   ![alt text](image-1.png)
   Thêm phần tử (add method):
 
-Khi bạn thêm một phần tử vào HashSet, Java sẽ gọi phương thức hashCode() của đối tượng đó để tính toán mã băm.
-Mã băm này sau đó sẽ được sử dụng để xác định chỉ mục trong một bảng băm (hash table) nội bộ (Mỗi giá trị hashCode tương ứng với một vị trí bucket trong HashMap. Nếu hai đối tượng có cùng giá trị hashCode, chúng có thể được lưu trữ trong cùng một bucket. Tuy nhiên, hai đối tượng có cùng hashCode không nhất thiết phải bằng nhau. Điều này giải thích tại sao phương thức equals không được gọi .).
-Nếu không có đối tượng nào ở chỉ mục đó, phần tử mới sẽ được thêm vào.
-Nếu đã có đối tượng ở chỉ mục đó, Java sẽ sử dụng phương thức equals() để kiểm tra xem phần tử mới có bằng với phần tử đã tồn tại không:
-Nếu bằng nhau (tức là equals trả về true), phần tử sẽ không được thêm vào HashSet (do HashSet không cho phép các phần tử trùng lặp).
-Nếu không bằng nhau, phần tử mới sẽ được lưu trữ trong một danh sách liên kết tại chỉ mục đó để quản lý va chạm.
-![alt text](image-2.png)
+- Khi bạn thêm một phần tử vào HashSet, Java sẽ gọi phương thức hashCode() của đối tượng đó để tính toán mã băm.
+- Mã băm này sau đó sẽ được sử dụng để xác định chỉ mục trong một bảng băm (hash table) nội bộ (Mỗi giá trị hashCode tương ứng với một vị trí bucket trong HashMap. Nếu hai đối tượng có cùng giá trị hashCode, chúng có thể được lưu trữ trong cùng một bucket. Tuy nhiên, hai đối tượng có cùng hashCode không nhất thiết phải bằng nhau. Điều này giải thích tại sao phương thức equals không được gọi .).
+- Nếu không có đối tượng nào ở chỉ mục đó, phần tử mới sẽ được thêm vào.
+- Nếu đã có đối tượng ở chỉ mục đó, Java sẽ sử dụng phương thức equals() để kiểm tra xem phần tử mới có bằng với phần tử đã tồn tại không:
+- Nếu bằng nhau (tức là equals trả về true), phần tử sẽ không được thêm vào HashSet (do HashSet không cho phép các phần tử trùng lặp).
+- Nếu không bằng nhau, phần tử mới sẽ được lưu trữ trong một danh sách liên kết tại chỉ mục đó để quản lý va chạm.
+  ![alt text](image-2.png)
 
 - https://topdev.vn/blog/noi-ve-serialization-trong-java/
   https://viblo.asia/p/java-serialization-XL6lAYrDlek
