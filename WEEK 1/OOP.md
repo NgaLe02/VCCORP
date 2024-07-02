@@ -48,7 +48,9 @@
   - Cả 2 nên phụ thuộc vào abstraction.
   - Abstraction không nên phụ thuộc vào chi tiết mà ngược lại
 
-## Khái niệm interface: là 1 lớp trừu tượng (abstract class) mà dùng để nhóm các phương thức (Method) liên quan với nhau mà không có logic.
+## Khái niệm interface:
+
+- là 1 lớp trừu tượng (abstract class) mà dùng để nhóm các phương thức (Method) liên quan với nhau mà không có logic.
 
 ## Từ khóa static được sử dụng để khai báo các thành phần thuộc về lớp thay vì đối tượng của lớp.
 
