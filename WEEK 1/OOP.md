@@ -8,27 +8,27 @@
 
 ## Kết quả công việc:
 
-- tính chất của OOP:
+## Tính chất của OOP:
 
-  - Tính trừu tượng (Abstraction ):
-    Ẩn các chi tiết hoặc quy trình bên trong khỏi người dùng. Điều này được thực hiện bằng cách tạo các class đại diện các đối tượng trong thế giới thực và các thuộc tính của chúng.
+- Tính trừu tượng (Abstraction ):
+  Ẩn các chi tiết hoặc quy trình bên trong khỏi người dùng. Điều này được thực hiện bằng cách tạo các class đại diện các đối tượng trong thế giới thực và các thuộc tính của chúng.
 
-  - Tính đóng gói (Encapsulation ):
+- Tính đóng gói (Encapsulation ):
 
-    - Tính đóng gói cho phép che giấu thông tin và những tính chất xử lý bên trong của đối tượng. Các đối tượng khác không thể tác động trực tiếp đến dữ liệu bên trong và làm thay đổi trạng thái của đối tượng mà bắt buộc phải thông qua các phương thức công khai (method public) do đối tượng đó cung cấp.
+  - Tính đóng gói cho phép che giấu thông tin và những tính chất xử lý bên trong của đối tượng. Các đối tượng khác không thể tác động trực tiếp đến dữ liệu bên trong và làm thay đổi trạng thái của đối tượng mà bắt buộc phải thông qua các phương thức công khai (method public) do đối tượng đó cung cấp.
 
-    - Tính chất này giúp tăng tính bảo mật cho đối tượng và tránh tình trạng dữ liệu bị hư hỏng ngoài ý muốn.
+  - Tính chất này giúp tăng tính bảo mật cho đối tượng và tránh tình trạng dữ liệu bị hư hỏng ngoài ý muốn.
 
-  - Tính kế thừa (Inheritance)
+- Tính kế thừa (Inheritance)
 
-    - Khi một lớp kế thừa các phương thức và thuộc tính của một lớp khác
-    - Điều này giúp tái sự dung code và dễ dàng them các đặc điểm mới.
+  - Khi một lớp kế thừa các phương thức và thuộc tính của một lớp khác
+  - Điều này giúp tái sự dung code và dễ dàng them các đặc điểm mới.
 
-  - Tính đa hình (Polymorphism)
+- Tính đa hình (Polymorphism)
 
-    - Cho phép tạo a các phương thức (method) với tên going nhau nhưng với các cách triển khai khác nhau.
+  - Cho phép tạo a các phương thức (method) với tên going nhau nhưng với các cách triển khai khác nhau.
 
-    - Điều này giúp tạo ra các hệ thống linh hoạt, dễ hiểu và dễ bảo trì hơn.
+  - Điều này giúp tạo ra các hệ thống linh hoạt, dễ hiểu và dễ bảo trì hơn.
 
 ## Tính chất của SOLID:
 
