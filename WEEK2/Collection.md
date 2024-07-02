@@ -44,9 +44,9 @@
 
 ## HashMap
 
-3.1 HashMap là một cấu trúc dữ liệu ánh xạ các khóa tới các giá trị. Nó lưu trữ dữ liệu theo cặp khóa-giá trị và không cho phép các khóa trùng lặp.
+- HashMap là một cấu trúc dữ liệu ánh xạ các khóa tới các giá trị. Nó lưu trữ dữ liệu theo cặp khóa-giá trị và không cho phép các khóa trùng lặp.
 
-3.2 Phương thức chính của HashMap:
+- Phương thức chính của HashMap:
 
 - put(K key, V value): Thêm một cặp khóa-giá trị vào HashMap.
 - get(Object key): Trả về giá trị liên kết với khóa được chỉ định.
@@ -55,24 +55,24 @@
 
 ## HashSet
 
-4.1 HashSet là một tập hợp không chứa các phần tử trùng lặp. Nó sử dụng HashMap nội bộ để lưu trữ các phần tử.
+- HashSet là một tập hợp không chứa các phần tử trùng lặp. Nó sử dụng HashMap nội bộ để lưu trữ các phần tử.
 
-4.2 Phương thức chính của HashSet:
+- Phương thức chính của HashSet:
 
-- add(E e): Thêm một phần tử vào HashSet.
-- contains(Object o): Kiểm tra xem HashSet có chứa phần tử được chỉ định không.
-- remove(Object o): Xóa phần tử khỏi HashSet.
+  - add(E e): Thêm một phần tử vào HashSet.
+  - contains(Object o): Kiểm tra xem HashSet có chứa phần tử được chỉ định không.
+  - remove(Object o): Xóa phần tử khỏi HashSet.
 
 ## ArrayList
 
-5.1 ArrayList là một mảng động, cho phép lưu trữ các phần tử theo thứ tự chèn vào và có thể thay đổi kích thước động.
+- ArrayList là một mảng động, cho phép lưu trữ các phần tử theo thứ tự chèn vào và có thể thay đổi kích thước động.
 
-5.2 Phương thức chính của ArrayList:
+- Phương thức chính của ArrayList:
 
-- add(E e): Thêm một phần tử vào cuối ArrayList.
-- get(int index): Trả về phần tử tại vị trí chỉ định.
-- remove(int index): Xóa phần tử tại vị trí chỉ định.
-- size(): Trả về số lượng phần tử trong ArrayList.
+  - add(E e): Thêm một phần tử vào cuối ArrayList.
+  - get(int index): Trả về phần tử tại vị trí chỉ định.
+  - remove(int index): Xóa phần tử tại vị trí chỉ định.
+  - size(): Trả về số lượng phần tử trong ArrayList.
 
 ## Hashcode và equals
 
@@ -94,12 +94,12 @@
 
 - Cách hashCode hoạt động trong Set: https://www.youtube.com/watch?v=TcKtHzDe6Qo
   ![alt text](image-1.png)
-  Thêm phần tử (add method):
+- Thêm phần tử (add method):
 
-- Khi bạn thêm một phần tử vào HashSet, Java sẽ gọi phương thức hashCode() của đối tượng đó để tính toán mã băm.
-- Mã băm này sau đó sẽ được sử dụng để xác định chỉ mục trong một bảng băm (hash table) nội bộ (Mỗi giá trị hashCode tương ứng với một vị trí bucket trong HashMap. Nếu hai đối tượng có cùng giá trị hashCode, chúng có thể được lưu trữ trong cùng một bucket. Tuy nhiên, hai đối tượng có cùng hashCode không nhất thiết phải bằng nhau. Điều này giải thích tại sao phương thức equals không được gọi .).
-- Nếu không có đối tượng nào ở chỉ mục đó, phần tử mới sẽ được thêm vào.
-- Nếu đã có đối tượng ở chỉ mục đó, Java sẽ sử dụng phương thức equals() để kiểm tra xem phần tử mới có bằng với phần tử đã tồn tại không:
-- Nếu bằng nhau (tức là equals trả về true), phần tử sẽ không được thêm vào HashSet (do HashSet không cho phép các phần tử trùng lặp).
-- Nếu không bằng nhau, phần tử mới sẽ được lưu trữ trong một danh sách liên kết tại chỉ mục đó để quản lý va chạm.
-  ![alt text](image-2.png)
+  - Khi bạn thêm một phần tử vào HashSet, Java sẽ gọi phương thức hashCode() của đối tượng đó để tính toán mã băm.
+  - Mã băm này sau đó sẽ được sử dụng để xác định chỉ mục trong một bảng băm (hash table) nội bộ (Mỗi giá trị hashCode tương ứng với một vị trí bucket trong HashMap. Nếu hai đối tượng có cùng giá trị hashCode, chúng có thể được lưu trữ trong cùng một bucket. Tuy nhiên, hai đối tượng có cùng hashCode không nhất thiết phải bằng nhau. Điều này giải thích tại sao phương thức equals không được gọi .).
+  - Nếu không có đối tượng nào ở chỉ mục đó, phần tử mới sẽ được thêm vào.
+  - Nếu đã có đối tượng ở chỉ mục đó, Java sẽ sử dụng phương thức equals() để kiểm tra xem phần tử mới có bằng với phần tử đã tồn tại không:
+  - Nếu bằng nhau (tức là equals trả về true), phần tử sẽ không được thêm vào HashSet (do HashSet không cho phép các phần tử trùng lặp).
+  - Nếu không bằng nhau, phần tử mới sẽ được lưu trữ trong một danh sách liên kết tại chỉ mục đó để quản lý va chạm.
+    ![alt text](image-2.png)
