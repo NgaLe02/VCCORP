@@ -17,28 +17,30 @@
 | ArrayList               | Yes | Yes | No  | No  |
 | HashMap                 | No  | No  | No  | No  |
 
-Trong bảng này:
+- Trong bảng này:
 
-- D đại diện cho "Duplicates" (trùng lặp).
-- O đại diện cho "Ordering" (thứ tự).
-- E đại diện cho "Efficient Index-Based Access" (truy cập dựa trên chỉ mục hiệu quả).
-- TS đại diện cho "Thread Safe" (an toàn luồng).
+  - D đại diện cho "Duplicates" (trùng lặp).
+  - O đại diện cho "Ordering" (thứ tự).
+  - E đại diện cho "Efficient Index-Based Access" (truy cập dựa trên chỉ mục hiệu quả).
+  - TS đại diện cho "Thread Safe" (an toàn luồng).
 
-HashMap:
+- HashMap:
 
-Lưu trữ cặp khóa-giá trị.
-Không cho phép các khóa trùng lặp.
-Truy cập nhanh dựa trên khóa.
-HashSet:
+  - Lưu trữ cặp khóa-giá trị.
+  - Không cho phép các khóa trùng lặp.
+  - Truy cập nhanh dựa trên khóa.
 
-Lưu trữ các phần tử không trùng lặp.
-Thêm, xóa, kiểm tra phần tử nhanh.
-Không duy trì thứ tự chèn.
-ArrayList:
+- HashSet:
 
-Lưu trữ các phần tử theo thứ tự chèn vào.
-Cho phép các phần tử trùng lặp.
-Truy cập phần tử nhanh theo chỉ số.
+  - Lưu trữ các phần tử không trùng lặp.
+  - Thêm, xóa, kiểm tra phần tử nhanh.
+  - Không duy trì thứ tự chèn.
+
+- ArrayList:
+
+  - Lưu trữ các phần tử theo thứ tự chèn vào.
+  - Cho phép các phần tử trùng lặp.
+  - Truy cập phần tử nhanh theo chỉ số.
 
 ## HashMap
 

@@ -49,6 +49,11 @@ public class ExampleAnotherHashCode {
 		ExampleAnotherHashCode hehe2 = new ExampleAnotherHashCode(4,5,6);
 		ExampleAnotherHashCode hehe3 = new ExampleAnotherHashCode(1,2,3);
 		
-		System.out.println(hehe1.equals(hehe3));
+	    String x = new String("hehe");
+	    String y = new String("hehe");
+
+	    System.out.println(x == y);
+		
+		System.out.println(hehe1 == hehe3);
 	}
 }
