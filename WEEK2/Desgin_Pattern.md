@@ -61,11 +61,13 @@ public class Singleton {
         return instance;
     }
     
-    // các phương thức và thuộc tính khác của Singleton
 }
 ```
+https://refactoring.guru/design-patterns/singleton
 
   ## Adapter Pattern
+https://refactoring.guru/design-patterns/adapter
 
+  ## Strategy Pattern
+https://refactoring.guru/design-patterns/strategy
 
-https://chatgpt.com/c/5dcb8815-58c4-458a-9b3b-006788bbc0a4
