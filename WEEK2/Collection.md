@@ -1,4 +1,4 @@
-1. Tìm hiểu tổng quan về Collection
+## Tìm hiểu tổng quan về Collection
 
 - Collection là 1 đối tượng chứa một nhóm đối tượng
 
@@ -9,12 +9,13 @@
   | List | ArrayList, LinkedList, CopyOnWriteArrayList |
   | Map | HashMap, LinkedHashMap, EnumMap, IdentityHashMap, WeakHashMap |
 
-2. So sánh
-   | Main Collection Classes | D | O | E | TS |
-   |-------------------------|-----|-----|-----|-----|
-   | HashSet | No | No | No | No |
-   | ArrayList | Yes | Yes | No | No |
-   | HashMap | No | No | No | No |
+## So sánh
+
+| Main Collection Classes | D   | O   | E   | TS  |
+| ----------------------- | --- | --- | --- | --- |
+| HashSet                 | No  | No  | No  | No  |
+| ArrayList               | Yes | Yes | No  | No  |
+| HashMap                 | No  | No  | No  | No  |
 
 Trong bảng này:
 
@@ -39,7 +40,7 @@ Lưu trữ các phần tử theo thứ tự chèn vào.
 Cho phép các phần tử trùng lặp.
 Truy cập phần tử nhanh theo chỉ số.
 
-3. HashMap
+## HashMap
 
 3.1 HashMap là một cấu trúc dữ liệu ánh xạ các khóa tới các giá trị. Nó lưu trữ dữ liệu theo cặp khóa-giá trị và không cho phép các khóa trùng lặp.
 
@@ -50,7 +51,7 @@ Truy cập phần tử nhanh theo chỉ số.
 - containsKey(Object key): Kiểm tra xem HashMap có chứa khóa được chỉ định không.
 - remove(Object key): Xóa mục với khóa được chỉ định khỏi HashMap.
 
-4. HashSet
+## HashSet
 
 4.1 HashSet là một tập hợp không chứa các phần tử trùng lặp. Nó sử dụng HashMap nội bộ để lưu trữ các phần tử.
 
@@ -60,7 +61,7 @@ Truy cập phần tử nhanh theo chỉ số.
 - contains(Object o): Kiểm tra xem HashSet có chứa phần tử được chỉ định không.
 - remove(Object o): Xóa phần tử khỏi HashSet.
 
-5. ArrayList
+## ArrayList
 
 5.1 ArrayList là một mảng động, cho phép lưu trữ các phần tử theo thứ tự chèn vào và có thể thay đổi kích thước động.
 
@@ -71,7 +72,7 @@ Truy cập phần tử nhanh theo chỉ số.
 - remove(int index): Xóa phần tử tại vị trí chỉ định.
 - size(): Trả về số lượng phần tử trong ArrayList.
 
-6. Hashcode và equals
+## Hashcode và equals
 
 - hashCode: Là một mã băm (hash code) của đối tượng. Nó được sử dụng bởi các cấu trúc dữ liệu dựa trên bảng băm như HashMap và HashSet để nhanh chóng tìm kiếm, thêm hoặc xóa các phần tử.
   Phương thức này trả về 1 số nguyên.
@@ -100,12 +101,3 @@ Truy cập phần tử nhanh theo chỉ số.
 - Nếu bằng nhau (tức là equals trả về true), phần tử sẽ không được thêm vào HashSet (do HashSet không cho phép các phần tử trùng lặp).
 - Nếu không bằng nhau, phần tử mới sẽ được lưu trữ trong một danh sách liên kết tại chỉ mục đó để quản lý va chạm.
   ![alt text](image-2.png)
-
-- https://topdev.vn/blog/noi-ve-serialization-trong-java/
-  https://viblo.asia/p/java-serialization-XL6lAYrDlek
-  https://www.javatpoint.com/design-patterns-in-java
-  https://chatgpt.com/c/79496a9e-d595-4795-8635-f0f8289bc6ba
-
-https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
-
-https://www.javatpoint.com/exception-handling-in-java
