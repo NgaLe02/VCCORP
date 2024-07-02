@@ -29,10 +29,10 @@ Trong bảng này:
 
 - Phương thức chính của HashMap:
 
-* put(K key, V value): Thêm một cặp khóa-giá trị vào HashMap.
-* get(Object key): Trả về giá trị liên kết với khóa được chỉ định.
-* containsKey(Object key): Kiểm tra xem HashMap có chứa khóa được chỉ định không.
-* remove(Object key): Xóa mục với khóa được chỉ định khỏi HashMap.
+put(K key, V value): Thêm một cặp khóa-giá trị vào HashMap.
+get(Object key): Trả về giá trị liên kết với khóa được chỉ định.
+containsKey(Object key): Kiểm tra xem HashMap có chứa khóa được chỉ định không.
+remove(Object key): Xóa mục với khóa được chỉ định khỏi HashMap.
 
 4. HashSet
 
@@ -40,18 +40,18 @@ Trong bảng này:
 
 - Phương thức chính của HashSet:
 
-* add(E e): Thêm một phần tử vào HashSet.
-* contains(Object o): Kiểm tra xem HashSet có chứa phần tử được chỉ định không.
-* remove(Object o): Xóa phần tử khỏi HashSet. 5. ArrayList
+add(E e): Thêm một phần tử vào HashSet.
+contains(Object o): Kiểm tra xem HashSet có chứa phần tử được chỉ định không.
+remove(Object o): Xóa phần tử khỏi HashSet. 5. ArrayList
 
 - ArrayList là một mảng động, cho phép lưu trữ các phần tử theo thứ tự chèn vào và có thể thay đổi kích thước động.
 
 - Phương thức chính của ArrayList:
 
-* add(E e): Thêm một phần tử vào cuối ArrayList.
-* get(int index): Trả về phần tử tại vị trí chỉ định.
-* remove(int index): Xóa phần tử tại vị trí chỉ định.
-* size(): Trả về số lượng phần tử trong ArrayList.
+add(E e): Thêm một phần tử vào cuối ArrayList.
+get(int index): Trả về phần tử tại vị trí chỉ định.
+remove(int index): Xóa phần tử tại vị trí chỉ định.
+size(): Trả về số lượng phần tử trong ArrayList.
 
 - https://topdev.vn/blog/noi-ve-serialization-trong-java/
   https://viblo.asia/p/java-serialization-XL6lAYrDlek
