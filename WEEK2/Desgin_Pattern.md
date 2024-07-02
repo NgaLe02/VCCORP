@@ -45,7 +45,8 @@
     - Tiện dụng trong quản lý tài nguyên toàn cục: Ví dụ như đối tượng kết nối đến cơ sở dữ liệu, ghi log, cấu hình ứng dụng, ...
     - Thiết kế linh hoạt: Dễ dàng thay đổi từ việc sử dụng nhiều thực thể đến duy nhất.
 
-`public class Singleton {
+`
+public class Singleton {
     private static Singleton instance;
     
     // private constructor để ngăn chặn việc khởi tạo từ bên ngoài
