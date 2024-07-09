@@ -102,4 +102,4 @@
   - Nếu đã có đối tượng ở chỉ mục đó, Java sẽ sử dụng phương thức equals() để kiểm tra xem phần tử mới có bằng với phần tử đã tồn tại không:
   - Nếu bằng nhau (tức là equals trả về true), phần tử sẽ không được thêm vào HashSet (do HashSet không cho phép các phần tử trùng lặp).
   - Nếu không bằng nhau, phần tử mới sẽ được lưu trữ trong một danh sách liên kết tại chỉ mục đó để quản lý va chạm.
-    ![alt text](image-2.png)
+    ![alt text](image-8.png)
