@@ -149,8 +149,63 @@ public void someMethod() {
     }
   ```
 
-  - `ReadWriteLock`: Một cặp khóa, một cho các thao tác chỉ đọc và một cho các thao tác ghi.
-  - `StampedLock`: Một loại khóa dựa trên khả năng với ba chế độ để kiểm soát truy cập đọc/ghi.
+Trong ví dụ này, hai luồng thread1 và thread2 sử dụng cùng một ReentrantLock. Luồng thread1 đầu tiên sẽ nắm giữ lock và sau đó giải phóng nó sau khi hoàn thành công việc. Sau đó, luồng thread2 sẽ nắm giữ và giải phóng lock.
+
+Điểm mạnh của ReentrantLock là bạn có thể kiểm soát được khi nào thả lock bằng cách sử dụng khối try-finally như trong ví dụ trên. Tuy nhiên, bạn cần chắc chắn rằng mọi lần nắm giữ đều _có khối finally để đảm bảo lock được giải phóng_ dù có xảy ra ngoại lệ hay không.
+
+- `ReadWriteLock`:
+
+  - là một giao diện (interface) cho phép bạn có được nhiều đọc cùng một lúc nhưng chỉ một viết duy nhất tại một thời điểm.
+  - Điều này hữu ích khi bạn có một tập dữ liệu mà nhiều luồng (thread) có thể đọc cùng một lúc nhưng chỉ một luồng có thể thay đổi nó vào một thời điểm nhất định.
+  - `ReadWriteLock` có hai loại lock bên trong:
+    - `ReadLock`: Cho phép nhiều luồng cùng nắm giữ để đọc dữ liệu.
+    - `WriteLock`: Yêu cầu lock độc quyền để thay đổi dữ liệu.
+  - `ReadWriteLock` cho phép nhiều luồng đọc cùng một lúc (nếu không có ai đang viết), nhưng chỉ một luồng có thể viết một lúc. Khi không có luồng nào đang viết, nhiều luồng có thể đọc cùng lúc.
+
+  ```import java.util.concurrent.locks.ReadWriteLock;
+  import java.util.concurrent.locks.ReentrantReadWriteLock;
+  ```
+
+public class ReadWriteLockExample {
+private static final ReadWriteLock lock = new ReentrantReadWriteLock();
+private static int data = 0;
+
+    public static void main(String[] args) {
+        Thread writerThread = new Thread(() -> {
+            lock.writeLock().lock();
+            try {
+                System.out.println("Writer thread is writing data.");
+                data++; // Modifying the shared resource
+                Thread.sleep(1000); // Simulating some write operation
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.writeLock().unlock();
+                System.out.println("Writer thread released the write lock.");
+            }
+        });
+
+        Thread readerThread = new Thread(() -> {
+            lock.readLock().lock();
+            try {
+                System.out.println("Reader thread is reading data: " + data); // Reading the shared resource
+                Thread.sleep(1000); // Simulating some read operation
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.readLock().unlock();
+                System.out.println("Reader thread released the read lock.");
+            }
+        });
+
+        writerThread.start();
+        readerThread.start();
+    }
+
+}
+
+```
+- `StampedLock`: Một loại khóa dựa trên khả năng với ba chế độ để kiểm soát truy cập đọc/ghi.
 
 ## Atomic Integer
 
@@ -161,17 +216,20 @@ public void someMethod() {
 - Java 21 giới thiệu virtual threads, những luồng nhẹ nhằm làm cho lập trình đồng thời trở nên dễ dàng và mở rộng hơn. Virtual threads được quản lý bởi Java runtime, cho phép tạo ra hàng ngàn hay thậm chí hàng triệu luồng mà không gây quá tải đáng kể.
 
 ```
+
 public class VirtualThreadExample {
-    public static void main(String[] args) {
-        for (int i = 0; i < 1000; i++) {
-            Thread.startVirtualThread(() -> {
-                System.out.println("Running in a virtual thread: " + Thread.currentThread());
-            });
-        }
-    }
+public static void main(String[] args) {
+for (int i = 0; i < 1000; i++) {
+Thread.startVirtualThread(() -> {
+System.out.println("Running in a virtual thread: " + Thread.currentThread());
+});
 }
+}
+}
+
 ```
 
 - Virtual threads cung cấp một mô hình đơn giản hơn cho xử lý đồng thời, làm cho việc viết và duy trì các ứng dụng đồng thời trở nên dễ dàng hơn mà không cần lo lắng về quản lý luồng và hạn chế tài nguyên.
 
 https://viblo.asia/p/virtual-threads-nen-tang-moi-cho-ung-dung-java-quy-mo-lon-5pPLkxA8VRZ
+```
