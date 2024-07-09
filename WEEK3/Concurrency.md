@@ -31,6 +31,8 @@
 - Chuyển đổi ngữ cảnh thì tốn kém hơn giữa các tiến trình.
 - Giao tiếp giữa các luồng thì nhanh hơn.
 
+  https://ant.ncc.asia/su-khac-biet-giua-process-va-thread-la-gi/
+
 ## Vòng đời của Thread
 
 Khi một chương trình Java khởi chạy, JVM sẽ tạo ra một thread gọi là main thread, đây là nơi thực thi chương trình. Ngoài main thread, chúng ta có thể tạo thêm các thread khác tùy theo nhu cầu sử dụng.
@@ -45,4 +47,76 @@ Khi một chương trình Java khởi chạy, JVM sẽ tạo ra một thread g�
   - TIMED_WAITING (Chờ Với Thời Gian Xác Định): Thread chờ với thời gian xác định khi gọi wait(timeout) hoặc sleep(timeout).
   - TERMINATED (Chấm Dứt): Thread kết thúc sau khi thực thi xong hoặc xảy ra ngoại lệ.
     ![alt text](image-9.png)
-    https://ant.ncc.asia/su-khac-biet-giua-process-va-thread-la-gi/
+
+## Tạo Thread trong Java
+
+- Có 2 cách:
+  - Extend Thread class
+  - Implement Runnable Interface
+
+### Tạo Thread bằng cách thừa kế từ lớp Thread
+
+- Tạo mới một lớp và kế thừa lớp này từ lớp cha Thread.
+- Trong lớp mới tạo đó, override phương thức run().
+- Cuối cùng, ở nơi khác, khi muốn tạo ra một Thread từ lớp này, khai báo đối tượng cho nó, rồi gọi đến phương thức start() của nó để bắt đầu khởi chạy Thread.
+
+```
+public class CountDownThread extends Thread {
+
+    @Override
+    public void run() {
+        int count = 10;
+        for (int i = count; i > 0; i--) {
+            System.out.println(i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Hết giờ");
+    }
+}
+```
+
+```
+public static void main(String[] args) {
+    CountDownThread countDownThread = new CountDownThread();
+    countDownThread.start();
+}
+```
+
+### Tạo Thread bằng cách implement từ Interface Runnable
+
+- Tạo mới một lớp và implement lớp này với interface có tên Runnable, override phương thức run()
+- Khi muốn tạo ra một Thread từ lớp này, trước hết khai báo đối tượng cho nó, rồi khai báo thêm một đối tượng của Thread nữa và truyền đối tượng của lớp này vào hàm khởi tạo của Thread.
+- Khi phương thức start() của lớp Thread vừa tạo được gọi đến, thì phương thức run() bên trong lớp dẫn xuất của Runnable sẽ được gọi để tạo thành một Luồng trong hệ thống.
+
+```
+public class CountDownThread implements Runnable {
+
+    @Override
+    public void run() {
+        int count = 10;
+        for (int i = count; i > 0; i--) {
+            System.out.println(i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Hết giờ");
+    }
+}
+```
+
+```
+public static void main(String[] args) {
+    CountDownThread countDownThread = new CountDownThread();
+    Thread thread = new Thread(countDownThread);
+    thread.start();
+}
+```
