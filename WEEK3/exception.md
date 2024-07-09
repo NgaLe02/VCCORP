@@ -35,3 +35,23 @@
 - Nếu trong try block xảy ra Exception, code trong try sẽ không được thực thi nữa. JVM sẽ tìm kiếm catch block có xử lý Exception đó.
 - Nếu không có catch block hay catch block không xử lý đúng Exception bị throw, code thực thi finally block và ngắt Thread hiện tại.
 - Nếu catch block xử lý đúng Exception, code tiếp tục thực thi đến khi hết catch, sau đó finally thực thi Thread như thông thường.
+
+- Một số lưu ý:
+  ![alt text](image-4.png)
+  - Khi code trong try block throw Exception, các catch sẽ được check theo thứ tự thực thì.
+  - Khi 1 catch block đã được thực thi, các catch block theo sau sẽ bị bỏ qua.
+  - Các catch nên được sắp xếp để xử lý theo thứ từ Exception con tới Exception cha. Ví dụ: chúng ta nên catch NumberFormatException trước khi catch Exception.
+  - Khối finally luôn được thực hiện dù Exception có được catch hay không. Nó sẽ không được thực thi khi System.exit() được gọi hay Error mà môi trường không xử lý được xảy ra.
+  - Đối với mỗi try block, có thể không có hoặc có 1 hoặc nhiều catch block nhưng sẽ chỉ có 1 finally block.
+
+## Exception Keywords
+
+Java các keywords thường dùng để xử lý các exception
+![alt text](image-6.png)
+
+## Các phương thức exception (Exception method)
+
+1 vài phương thức có sẵn quan trọng trong class Throwable
+![alt text](image-5.png)
+
+## Tạo exception
