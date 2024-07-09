@@ -78,11 +78,3 @@ Trong ví dụ trên, hai thread (thread1 và thread2) đều thực hiện vi�
 ## Concurrent HashMap
 
 ## Virtual Thread
-
-```
-
-```
-
-```
-
-```
