@@ -42,7 +42,8 @@ public class RaceConditionExample {
 
         System.out.println("Final count: " + counter.getCount());
     }
-}class Counter {
+}
+class Counter {
     private int count = 0;
 
     public void increment() {
@@ -53,7 +54,9 @@ public class RaceConditionExample {
         return count;
     }
 }
+```
 
+```
 public class RaceConditionExample {
     public static void main(String[] args) {
         Counter counter = new Counter();
