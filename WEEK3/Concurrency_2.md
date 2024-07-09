@@ -162,13 +162,13 @@ Trong ví dụ này, hai luồng thread1 và thread2 sử dụng cùng một Ree
     - `WriteLock`: Yêu cầu lock độc quyền để thay đổi dữ liệu.
   - `ReadWriteLock` cho phép nhiều luồng đọc cùng một lúc (nếu không có ai đang viết), nhưng chỉ một luồng có thể viết một lúc. Khi không có luồng nào đang viết, nhiều luồng có thể đọc cùng lúc.
 
-  ```import java.util.concurrent.locks.ReadWriteLock;
-  import java.util.concurrent.locks.ReentrantReadWriteLock;
   ```
+  import java.util.concurrent.locks.ReadWriteLock;
+  import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class ReadWriteLockExample {
-private static final ReadWriteLock lock = new ReentrantReadWriteLock();
-private static int data = 0;
+    public class ReadWriteLockExample {
+    private static final ReadWriteLock lock = new ReentrantReadWriteLock();
+    private static int data = 0;
 
     public static void main(String[] args) {
         Thread writerThread = new Thread(() -> {
@@ -202,9 +202,10 @@ private static int data = 0;
         readerThread.start();
     }
 
-}
+    }
 
-```
+  ```
+
 - `StampedLock`: Một loại khóa dựa trên khả năng với ba chế độ để kiểm soát truy cập đọc/ghi.
 
 ## Atomic Integer
@@ -232,4 +233,7 @@ System.out.println("Running in a virtual thread: " + Thread.currentThread());
 - Virtual threads cung cấp một mô hình đơn giản hơn cho xử lý đồng thời, làm cho việc viết và duy trì các ứng dụng đồng thời trở nên dễ dàng hơn mà không cần lo lắng về quản lý luồng và hạn chế tài nguyên.
 
 https://viblo.asia/p/virtual-threads-nen-tang-moi-cho-ung-dung-java-quy-mo-lon-5pPLkxA8VRZ
+
+```
+
 ```
