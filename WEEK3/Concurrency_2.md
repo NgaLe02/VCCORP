@@ -71,6 +71,29 @@ Trong ví dụ trên, hai thread (thread1 và thread2) đều thực hiện vi�
     }
     ```
 
+  - Sử dụng `Lock`
+  - Sử dụng `Atomic Variables`:
+
+    - Các lớp như AtomicInteger, AtomicLong, và AtomicReference cung cấp các phương thức nguyên tử để thực hiện các thao tác mà không cần đồng bộ hóa.
+
+    ```
+    import java.util.concurrent.atomic.AtomicInteger;
+
+    public class SomeClass {
+        private final AtomicInteger counter = new AtomicInteger(0);
+
+        public void increment() {
+            counter.incrementAndGet();
+        }
+
+        public int getCounter() {
+            return counter.get();
+        }
+    }
+    ```
+
+- Sử dụng `Concurrent Collections`
+
 ## Lock
 
 ## Atomic Integer
