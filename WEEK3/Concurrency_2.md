@@ -93,6 +93,17 @@ Trong ví dụ trên, hai thread (thread1 và thread2) đều thực hiện vi�
     ```
 
 - Sử dụng `Concurrent Collections`
+- Sử dụng `volatile` Keyword: Từ khóa volatile đảm bảo rằng các thay đổi trên biến sẽ được nhìn thấy ngay lập tức bởi các luồng khác.
+
+```
+private volatile boolean flag = true;
+
+public void someMethod() {
+    while (flag) {
+        // do something
+    }
+}
+```
 
 ## Lock
 
