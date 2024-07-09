@@ -51,16 +51,17 @@ Trong ví dụ trên, hai thread (thread1 và thread2) đều thực hiện vi�
 
 - 1 số cách khắc phục Race Condition:
 
-  - Sử dụng `synchronized`: - Đánh dấu phương thức bằng từ khóa `synchronized` để đảm bảo rằng chỉ có một luồng được phép truy cập vào phương thức đó tại một thời điểm.
+  - Sử dụng `synchronized`:
 
-        ```
+    - Đánh dấu phương thức bằng từ khóa `synchronized` để đảm bảo rằng chỉ có một luồng được phép truy cập vào phương thức đó tại một thời điểm.
 
+    ```
     public synchronized void synchronizedMethod() {
     // critical section
     }
+    ```
 
-```
-  - Synchronized Blocks: Đặt đoạn mã cần bảo vệ trong một khối synchronized để đồng bộ hóa trên một đối tượng cụ thể.
+    - Synchronized Blocks: Đặt đoạn mã cần bảo vệ trong một khối synchronized để đồng bộ hóa trên một đối tượng cụ thể.
 
 ## Lock
 
@@ -69,6 +70,8 @@ Trong ví dụ trên, hai thread (thread1 và thread2) đều thực hiện vi�
 ## Concurrent HashMap
 
 ## Virtual Thread
+
+```
 
 ```
 
