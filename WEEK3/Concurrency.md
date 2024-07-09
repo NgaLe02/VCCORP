@@ -138,10 +138,12 @@ public static void main(String[] args) {
 
 - Ví dụ có các thread được thể hiện ở bảng dưới đây:
 
-Thread Thời gian đến
-t1 0
-t2 1
-t3 2
-t4 3
+| Thread | Thời gian đến |
+| ------ | ------------- |
+| t1     | 0             |
+| t2     | 1             |
+| t3     | 2             |
+| t4     | 3             |
+
 Trong bảng trên, chúng ta có thể thấy rằng Luồng t1 đã đến đầu tiên, sau đó đến Luồng t2, rồi đến t3, và cuối cùng là t4, và thứ tự mà các luồng sẽ được xử lý là theo thời gian đến của các luồng.
 ![alt text](image-10.png)
