@@ -157,3 +157,36 @@ Trong sơ đồ trên, mỗi luồng được đưa ra một lát thời gian l�
 
 Giả sử có nhiều luồng có sẵn ở trạng thái có thể chạy được. Trình lên lịch luồng chọn luồng có mức độ ưu tiên cao nhất. Vì thuật toán cũng có tính ưu tiên, do đó, các lát thời gian cũng được cung cấp cho các luồng để tránh bị starvation. Do đó, sau một thời gian, ngay cả khi luồng ưu tiên cao nhất chưa hoàn thành công việc của nó, nó vẫn phải giải phóng CPU vì quyền ưu tiên.
 ![alt text](image-13.png)
+
+https://www.geeksforgeeks.org/preemptive-and-non-preemptive-scheduling/
+
+## Thread Pool
+
+![alt text](image-14.png)
+
+- ThreadPool được dùng để giới hạn số lượng Thread được chạy bên trong ứng dụng của chúng ta trong cùng một thời điểm.
+
+- Ví dụ: Khi chúng ta viết chương trình tải các tập tin từ Internet, mỗi tập tin cần 1 Thread để thực hiện quá trình tải, giả sử cần tải 100 tệp hình ảnh thì chúng ta phải cần tới 100 Thread hoạt động cùng một thời điểm trong cùng một chương trình. Điều này sẽ dễ dẫn đến lỗi quá tải của chương trình, làm ảnh hưởng đến hiệu suất và có thể dẫn đến gây lỗi (crash) chương trình.
+
+- Vì vậy, thay vì tạo các luồng mới khi các task (nhiệm vụ) mới đến, một ThreadPool sẽ giữ một số luồng nhàn rỗi (no task) đã sẵn sàng để thực hiện tác vụ nếu cần. Sau khi một thread hoàn thành việc thực thi một tác vụ, nó sẽ không chết. Thay vào đó nó vẫn không hoạt động trong ThreadPool và chờ đợi được lựa chọn để thực hiện nhiệm vụ mới.
+
+- Nếu tất cả các Thread đang bận rộn thực hiện nhiệm vụ, nhiệm vụ mới được đặt trong một hàng đợi (BlockingQueue), chờ đợi một Thread trở nên có sẵn.
+
+- 1 vài loại ThreadPool:
+
+## Excutor là gì?
+
+- Một Executor là một đối tượng chịu trách nhiệm quản lý các luồng và thực hiện các tác vụ Runnable được yêu cầu xử lý. Nó tách riêng các chi tiết của việc tạo Thread, lập kế hoạch (scheduling), … để chúng ta có thể tập trung phát triển logic của tác vụ mà không quan tâm đến các chi tiết quản lý Thread.
+
+- Java Concurrency API định nghĩa 3 interfaces cơ bản sau cho các Executor:
+
+  - Executor: là interface cha của tất cả Executor. Nó xác định chỉ một phương thực excute(Runnable).
+  - ExecutorService: là một Executor cho phép theo dõi tiến trình của các tác vụ trả về giá trị (Callable) thông qua đối tượng Future, và quản lý việc kết thúc các luồng. Các phương thức chính của nó bao gồm submit() và shutdown().
+  - ScheduledExecutorService: là một ExecutorService có thể lên lịch cho các tác vụ để thực thi sau một khoảng thời gian nhất định, hoặc để thực hiện định kỳ. Các phương thức chính của nó là schedule(), scheduleAtFixedRate() and scheduleWithFixedDelay().
+
+- Chúng có thể tạo một Executor bằng cách sử dụng một trong các phương thức được cung cấp bởi lớp tiện ích Executors như sau:
+  - `newSingleThreadExecutor`(): trong ThreadPool chỉ có 1 Thread và các task (nhiệm vụ) sẽ được xử lý một cách tuần tự.
+  - `newCachedThreadPool`(): trong ThreadPool sẽ có nhiều Thread và các nhiệm vụ sẽ được xử lý một cách song song. Các Thread cũ sau khi xử lý xong sẽ được sử dụng lại cho nhiệm vụ mới. Mặc định nếu một Thread không được sử dụng trong vòng 60 giây thì Thread đó sẽ bị tắt.
+  - `newFixedThreadPool`(int n): trong ThreadPool sẽ được cố định các Thread. Nếu một nhiệm vụ mới được đưa vào mà các Thread đều đang “bận rộn” thì nhiệm vụ đó sẽ được gửi vào Blocking Queue và sau đó nếu có một Thread đã thực thi xong nhiệm vụ của nó thì nhiệm vụ đang ở trong Queue đó sẽ được push ra khỏi Queue và được Thread đó xử lý tiếp.
+  - `newScheduledThreadPool`(int corePoolSize): tương tự như `newCachedThreadPool`() nhưng sẽ có thời gian delay giữa các Thread.
+  - `newSingleThreadScheduledExecutor`(): tương tự như `newSingleThreadExecutor`() nhưng sẽ có khoảng thời gian delay giữa các Thread.
