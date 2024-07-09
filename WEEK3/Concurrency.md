@@ -120,3 +120,15 @@ public static void main(String[] args) {
     thread.start();
 }
 ```
+
+## Trình lên lịch của Thread (Thread Scheduler)
+
+### Thread Scheduler là gì?
+
+- Trình lên lịch của Thread (Thread scheduler) trong java là một phần của JVM có nhiệm vụ quyết định thread nào nên được chạy.
+- Chỉ có một thread tại một thời điểm có thể chạy trong một xử lý duy nhất.
+- Thread scheduler chủ yếu sử dụng việc lập kế hoạch ưu tiên hoặc phân chia thời gian để lên lịch các luồng.
+
+### Thread Scheduler hoạt động như nào?
+
+- Có hai yếu tố để lên lịch cho một luồng tức là **Mức độ ưu tiên** và **Thời gian đến**.
