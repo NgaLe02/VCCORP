@@ -180,9 +180,9 @@ https://www.geeksforgeeks.org/preemptive-and-non-preemptive-scheduling/
 
 - Java Concurrency API định nghĩa 3 interfaces cơ bản sau cho các Executor:
 
-  - Executor: là interface cha của tất cả Executor. Nó xác định chỉ một phương thực excute(Runnable).
-  - ExecutorService: là một Executor cho phép theo dõi tiến trình của các tác vụ trả về giá trị (Callable) thông qua đối tượng Future, và quản lý việc kết thúc các luồng. Các phương thức chính của nó bao gồm submit() và shutdown().
-  - ScheduledExecutorService: là một ExecutorService có thể lên lịch cho các tác vụ để thực thi sau một khoảng thời gian nhất định, hoặc để thực hiện định kỳ. Các phương thức chính của nó là schedule(), scheduleAtFixedRate() and scheduleWithFixedDelay().
+  - `Executor`: là interface cha của tất cả `Executor`. Nó xác định chỉ một phương thực `excute`(Runnable).
+  - `ExecutorService`: là một Executor cho phép theo dõi tiến trình của các tác vụ trả về giá trị (Callable) thông qua đối tượng Future, và quản lý việc kết thúc các luồng. Các phương thức chính của nó bao gồm `submit`() và `shutdown`().
+  - `ScheduledExecutorService`: là một `ExecutorService` có thể lên lịch cho các tác vụ để thực thi sau một khoảng thời gian nhất định, hoặc để thực hiện định kỳ. Các phương thức chính của nó là `schedule`(), `scheduleAtFixedRate`() and `scheduleWithFixedDelay`().
 
 - Chúng có thể tạo một Executor bằng cách sử dụng một trong các phương thức được cung cấp bởi lớp tiện ích Executors như sau:
   - `newSingleThreadExecutor`(): trong ThreadPool chỉ có 1 Thread và các task (nhiệm vụ) sẽ được xử lý một cách tuần tự.
