@@ -206,7 +206,59 @@ Trong ví dụ này, hai luồng thread1 và thread2 sử dụng cùng một Ree
 
   ```
 
-- `StampedLock`: Một loại khóa dựa trên khả năng với ba chế độ để kiểm soát truy cập đọc/ghi.
+  Trong ví dụ này, writerThread nắm giữ WriteLock để thay đổi dữ liệu (data), trong khi readerThread nắm giữ ReadLock để đọc dữ liệu
+
+- `StampedLock`:
+
+  - `StampedLock` là một loại khóa mới được giới thiệu trong Java 8, cung cấp các cơ chế khóa optimistic (lạc quan) ngoài các cơ chế khóa read/write thông thường.
+    - Reading lock (Khóa đọc): Cho phép nhiều luồng cùng đọc dữ liệu.
+    - Writing lock (Khóa ghi): Yêu cầu lock độc quyền để thay đổi dữ liệu.
+    - Optimistic reading lock (Khóa đọc lạc quan): Không đảm bảo nhất quán, nhưng cung cấp khả năng kiểm tra nhẹ mà không cần phải chờ đợi.
+  - `StampedLock` hỗ trợ cơ chế "đánh dấu" (`stamp`), mỗi lần khóa được yêu cầu, nó sẽ trả về một giá trị stamp mà bạn có thể sử dụng để _kiểm tra xem dữ liệu có thay đổi từ lúc bạn nhận stamp đến lúc bạn sử dụng stamp đó hay không_.
+
+  ```
+  import java.util.concurrent.locks.StampedLock;
+
+    public class StampedLockExample {
+    private static final StampedLock lock = new StampedLock();
+    private static int data = 0;
+
+    public static void main(String[] args) {
+        // Writing thread
+        Thread writerThread = new Thread(() -> {
+            long stamp = lock.writeLock();
+            try {
+                System.out.println("Writer thread is writing data.");
+                data++; // Modifying the shared resource
+                Thread.sleep(1000); // Simulating some write operation
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.unlockWrite(stamp);
+                System.out.println("Writer thread released the write lock.");
+            }
+        });
+
+        // Optimistic reading thread
+        Thread optimisticReaderThread = new Thread(() -> {
+            long stamp = lock.tryOptimisticRead();
+            int currentValue = data; // Reading the shared resource
+            if (!lock.validate(stamp)) {
+                stamp = lock.readLock();
+                try {
+                    currentValue = data; // Reading the shared resource
+                } finally {
+                    lock.unlockRead(stamp);
+                }
+            }
+            System.out.println("Optimistic reader thread is reading data: " + currentValue);
+        });
+
+        writerThread.start();
+        optimisticReaderThread.start();
+    }
+    }
+  ```
 
 ## Atomic Integer
 
