@@ -190,3 +190,5 @@ https://www.geeksforgeeks.org/preemptive-and-non-preemptive-scheduling/
   - `newFixedThreadPool`(int n): trong ThreadPool sẽ được cố định các Thread. Nếu một nhiệm vụ mới được đưa vào mà các Thread đều đang “bận rộn” thì nhiệm vụ đó sẽ được gửi vào Blocking Queue và sau đó nếu có một Thread đã thực thi xong nhiệm vụ của nó thì nhiệm vụ đang ở trong Queue đó sẽ được push ra khỏi Queue và được Thread đó xử lý tiếp.
   - `newScheduledThreadPool`(int corePoolSize): tương tự như `newCachedThreadPool`() nhưng sẽ có thời gian delay giữa các Thread.
   - `newSingleThreadScheduledExecutor`(): tương tự như `newSingleThreadExecutor`() nhưng sẽ có khoảng thời gian delay giữa các Thread.
+
+https://chatgpt.com/c/3d7a84b9-9bdf-4d10-b623-32c0a932b07d

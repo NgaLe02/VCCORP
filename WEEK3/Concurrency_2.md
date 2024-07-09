@@ -107,8 +107,71 @@ public void someMethod() {
 
 ## Lock
 
+- `Lock` cung cấp cơ chế để kiểm soát quyền truy cập vào một tài nguyên chia sẻ bởi nhiều luồng.
+- Nó đảm bảo rằng chỉ có một luồng có thể truy cập tài nguyên tại một thời điểm, ngăn chặn tình trạng `race condition`.
+- Java cung cấp nhiều kiểu khóa khác nhau:
+
+  - `ReentrantLock`: là một loại `lock` (khóa) có khả năng tái nhập (reentrant), có nghĩa là một luồng (thread) có thể nắm giữ nó nhiều lần và chỉ giải phóng khi nó đã được giải phóng bởi tất cả các lần nắm giữ.
+
+  ```
+  import java.util.concurrent.locks.ReentrantLock;
+
+    public class ReentrantLockExample {
+    private static final ReentrantLock lock = new ReentrantLock();
+
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(() -> {
+            lock.lock();
+            try {
+                System.out.println("Thread 1 acquired the lock");
+                Thread.sleep(1000); // Simulating some work
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.unlock();
+                System.out.println("Thread 1 released the lock");
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            lock.lock();
+            try {
+                System.out.println("Thread 2 acquired the lock");
+            } finally {
+                lock.unlock();
+                System.out.println("Thread 2 released the lock");
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+    }
+    }
+  ```
+
+  - `ReadWriteLock`: Một cặp khóa, một cho các thao tác chỉ đọc và một cho các thao tác ghi.
+  - `StampedLock`: Một loại khóa dựa trên khả năng với ba chế độ để kiểm soát truy cập đọc/ghi.
+
 ## Atomic Integer
 
 ## Concurrent HashMap
 
 ## Virtual Thread
+
+- Java 21 giới thiệu virtual threads, những luồng nhẹ nhằm làm cho lập trình đồng thời trở nên dễ dàng và mở rộng hơn. Virtual threads được quản lý bởi Java runtime, cho phép tạo ra hàng ngàn hay thậm chí hàng triệu luồng mà không gây quá tải đáng kể.
+
+```
+public class VirtualThreadExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 1000; i++) {
+            Thread.startVirtualThread(() -> {
+                System.out.println("Running in a virtual thread: " + Thread.currentThread());
+            });
+        }
+    }
+}
+```
+
+- Virtual threads cung cấp một mô hình đơn giản hơn cho xử lý đồng thời, làm cho việc viết và duy trì các ứng dụng đồng thời trở nên dễ dàng hơn mà không cần lo lắng về quản lý luồng và hạn chế tài nguyên.
+
+https://viblo.asia/p/virtual-threads-nen-tang-moi-cho-ung-dung-java-quy-mo-lon-5pPLkxA8VRZ
