@@ -49,9 +49,93 @@
 Java các keywords thường dùng để xử lý các exception
 ![alt text](image-6.png)
 
+## Sự khác nhau giữa hai từ khóa "throw" và "throws" trong Java?
+
+- Throw:
+  - Được sử dụng để ném ra một ngoại lệ cụ thể.
+  - Chúng ta có thể ném một trong hai ngoại lệ checked hoặc unchecked trong java bằng từ khóa này.
+  - Từ khóa throw chủ yếu được sử dụng để ném ngoại lệ do người dùng tự định nghĩa.
+
+```
+	public static void main(String[] args) {
+		ageValid(19);
+		System.out.println("------");
+		ageValid(17);
+	}
+
+	public static void ageValid(int age) {
+		if (age < 18) {
+			throw new ArithmeticException("Age not valid!");
+		} else {
+			System.out.println("Welcome!");
+		}
+	}
+```
+
+Kết quả:
+
+```
+Welcome!
+------
+Exception in thread "main" java.lang.ArithmeticException: Age not valid!
+	at exception.ThrowExceptionExample.ageValid(ThrowExceptionExample.java:13)
+	at exception.ThrowExceptionExample.main(ThrowExceptionExample.java:8)
+```
+
+- Throws:
+  - Được sử dụng để khai báo một ngoại lệ.
+  - Nó thông báo cho lập trình viên rằng một ngoại lệ có thể xảy ra. Ngoại lệ checked được truyền ra ngay cả khi chỉ sử dụng từ khóa throws.
+  - Throws được khai báo ngay sau dấu đóng ngoặc đơn của phương thức.
+
 ## Các phương thức exception (Exception method)
 
 1 vài phương thức có sẵn quan trọng trong class Throwable
 ![alt text](image-5.png)
 
-## Tạo exception
+## Tự tạo exception
+
+- Tự tạo exception (Custom Exception) là một loại ngoại lệ do bạn tự định nghĩa hoặc tạo riêng cho ứng dụng của
+- Ví dụ:
+  Để tạo một Custom Exception trong Java, bạn cần tạo một lớp kế thừa từ lớp Exception hoặc các lớp con của nó.
+
+Custom Exception
+
+```
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String s) {
+        super(s);
+    }
+}
+
+```
+
+Sử dụng Custom Exception
+
+```
+class TestCustomException {
+
+    static void validate(int age) throws InvalidAgeException {
+        if (age < 18)
+            throw new InvalidAgeException("Tuổi không hợp lệ");
+        else
+            System.out.println("Chào mừng bạn đã đủ tuổi bầu cử");
+    }
+
+    public static void main(String args[]) {
+        try {
+            validate(13);
+        } catch (InvalidAgeException e) {
+            System.out.println("Xảy ra ngoại lệ: " + e.getMessage());
+        }
+
+        System.out.println("Phần còn lại của mã...");
+    }
+}
+```
+
+Kết quả:
+
+```
+Xảy ra ngoại lệ: Tuổi không hợp lệ
+Phần còn lại của mã...
+```
