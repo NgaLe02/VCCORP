@@ -132,3 +132,16 @@ public static void main(String[] args) {
 ### Thread Scheduler hoạt động như nào?
 
 - Có hai yếu tố để lên lịch cho một luồng tức là **Mức độ ưu tiên** và **Thời gian đến**.
+
+  - **Mức độ ưu tiên:** mức độ ưu tiên của mỗi luồng nằm trong khoảng từ 1 đến 10. Nếu một luồng có mức độ ưu tiên cao hơn, điều đó có nghĩa là luồng đó có cơ hội tốt hơn được Trình lên lịch luồng chọn.
+  - **Thời gian đến:** giả sử hai luồng có cùng mức độ ưu tiên nhập vào trạng thái chạy được, thì mức độ ưu tiên không thể là yếu tố để chọn một luồng từ hai luồng này. Trong trường hợp này, thời gian đến của luồng được xem xét bởi Trình lên lịch luồng. Một chủ đề đến trước sẽ được ưu tiên hơn các chủ đề khác.
+
+- Ví dụ có các thread được thể hiện ở bảng dưới đây:
+
+Thread Thời gian đến
+t1 0
+t2 1
+t3 2
+t4 3
+Trong bảng trên, chúng ta có thể thấy rằng Luồng t1 đã đến đầu tiên, sau đó đến Luồng t2, rồi đến t3, và cuối cùng là t4, và thứ tự mà các luồng sẽ được xử lý là theo thời gian đến của các luồng.
+![alt text](image-10.png)
