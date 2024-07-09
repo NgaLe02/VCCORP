@@ -147,3 +147,12 @@ public static void main(String[] args) {
 
 Trong bảng trên, chúng ta có thể thấy rằng Luồng t1 đã đến đầu tiên, sau đó đến Luồng t2, rồi đến t3, và cuối cùng là t4, và thứ tự mà các luồng sẽ được xử lý là theo thời gian đến của các luồng.
 ![alt text](image-10.png)
+
+Thông thường, thuật toán First Come First Serve là non-preemptive, điều này không tốt vì nó có thể dẫn đến bị block vô hạn. Để tránh điều đó chúng sẽ đc cắt ra thành các lát và được cung cấp cho các luồng một thời gian để sau một thời gian, luồng đang chạy phải ra khỏi CPU. Do đó, các luồng chờ khác cũng có thời gian để thực hiện công việc của họ.
+![alt text](image-11.png)
+
+Trong sơ đồ trên, mỗi luồng được đưa ra một lát thời gian là 2 giây. Vì vậy, sau 2 giây, luồng đầu tiên ra khỏi CPU, và sau đó CPU được bắt bởi Thread2. Quá trình tương tự cũng lặp lại cho các chủ đề khác.
+![alt text](image-12.png)
+
+Giả sử có nhiều luồng có sẵn ở trạng thái có thể chạy được. Trình lên lịch luồng chọn luồng có mức độ ưu tiên cao nhất. Vì thuật toán cũng có tính ưu tiên, do đó, các lát thời gian cũng được cung cấp cho các luồng để tránh bị starvation. Do đó, sau một thời gian, ngay cả khi luồng ưu tiên cao nhất chưa hoàn thành công việc của nó, nó vẫn phải giải phóng CPU vì quyền ưu tiên.
+![alt text](image-13.png)
