@@ -41,12 +41,12 @@ Sử dụng INNER JOIN thay vì subquery để kết nối dữ liệu từ các
 
   - Ví dụ: hãy xem xét một truy vấn để xác định tất cả các khách hàng trong thành phố có họ bắt đầu bằng chữ cái “P”. Truy vấn sau đây sử dụng ký tự đại diện để tìm tất cả các record khớp với yêu cầu:
 
-```
-SELECT \* FROM customers WHERE last_name_city LIKE 'P%';
-```
+    ```
+    SELECT * FROM customers WHERE last_name_city LIKE 'P%';
+    ```
 
-Truy vấn vẫn sẽ hoạt động nhưng sẽ chậm hơn khi sử dụng index trên cột Last_name_city. Truy vấn có thể được cải thiện bằng cách thêm index vào cột Last_name_city và viết lại như sau:
+    Truy vấn vẫn sẽ hoạt động nhưng sẽ chậm hơn khi sử dụng index trên cột Last_name_city. Truy vấn có thể được cải thiện bằng cách thêm index vào cột Last_name_city và viết lại như sau:
 
-```
-SELECT \* FROM customers WHERE last_name_city >= 'P' AND last_name < 'Q';
-```
+    ```
+    SELECT * FROM customers WHERE last_name_city >= 'P' AND last_name < 'Q';
+    ```
