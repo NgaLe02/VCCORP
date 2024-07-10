@@ -128,6 +128,6 @@ echo "cc" >> test.txt
 - Tìm hiểu về logging
 - Tìm hiểu GraphQL
 - Tìm hiểu về cơ sở dữ liệu NoSQL: MongoDB
-- Tìm hiểu về Search enginces: Elasticsearck/opensearch
+- Tìm hiểu về Search enginces: Elasticsearch/opensearch
 
 ---
