@@ -343,11 +343,55 @@ public class AtomicCounter {
 }
 ```
 
-## ConcurentMap
+## Concurrent HashMap
 
 - `ConcurrentMap` là một interface trong Java, mở rộng từ Map và cung cấp các phương thức để thực hiện các thao tác đọc và ghi an toàn trong môi trường đa luồng mà không cần sử dụng `synchronized` hoặc các khóa đồng bộ khác.
 
-## Concurrent HashMap
+![alt text](image-15.png)
+
+- Để sử dụng các chức năng của `ConcurrentMap` interface, chúng ta cần sử dụng class `ConcurrentHashMap` để triển khai nó.
+
+```
+// ConcurrentMap implementation by ConcurrentHashMap
+CocurrentMap<Key, Value> numbers = new ConcurrentHashMap<>();
+```
+
+- Các phương thức Atomic trong ConcurrentHashMap:
+
+  - _putIfAbsent(K key, V value)_
+
+    - Thêm một cặp key-value vào map nếu key chưa tồn tại.
+    - Trả về giá trị của key nếu key đã tồn tại; nếu không, trả về null.
+
+  - _remove(Object key, Object value)_
+
+    - Xóa phần tử với key và value chỉ định nếu tồn tại.
+    - Trả về true nếu phần tử được xóa thành công; nếu không, trả về false.
+
+  - _replace(K key, V oldValue, V newValue)_
+
+    - Thay thế giá trị của key nếu key đã tồn tại và giá trị hiện tại của key là oldValue.
+    - Trả về true nếu thay thế thành công; nếu không, trả về false.
+
+  - _computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction)_
+
+    - Nếu key chưa tồn tại, tính toán giá trị mới bằng cách sử dụng mappingFunction và thêm vào map.
+    - Trả về giá trị của key sau khi tính toán.
+
+  - _computeIfPresent(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction)_
+
+    - Nếu key đã tồn tại, tính toán giá trị mới bằng cách sử dụng remappingFunction và thay thế giá trị hiện tại của key.
+    - Trả về giá trị mới của key sau khi tính toán.
+
+  - _compute(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction)_
+
+    - Tính toán giá trị mới của key bằng cách sử dụng remappingFunction và thay thế giá trị hiện tại của key (nếu key đã tồn tại).
+    - Trả về giá trị mới của key sau khi tính toán.
+
+  - _merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction)_
+
+    - Kết hợp giá trị mới với giá trị hiện tại của key (nếu key đã tồn tại) bằng cách sử dụng remappingFunction.
+    - Trả về giá trị mới của key sau khi kết hợp.
 
 ## Virtual Thread
 
