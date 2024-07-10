@@ -265,12 +265,54 @@ Trong ví dụ này, hai luồng thread1 và thread2 sử dụng cùng một Ree
     => nâng cấp lock hiện tại của mình mà không cần phải giải phóng và yêu cầu lại từ đầu, giảm thiểu thời gian chờ đợi và cải thiện hiệu suất
     https://medium.com/@aayushbhatnagar_10462/java-concurrency-through-stamped-locks-eb65e9a675c1
 
+## Volatile
+
+- `Volatile` được sử dụng để khai báo một biến có thể được truy cập và sửa đổi bởi nhiều luồng mà không cần đồng bộ hóa.
+- Khi một biến được khai báo là `volatile`, nó đảm bảo rằng bất kỳ thay đổi nào đối với biến này sẽ được nhìn thấy ngay lập tức bởi tất cả các luồng.
+
+- Đặc điểm:
+  - _Truy Cập Trực Tiếp đến Bộ Nhớ Chính:_ Các biến `volatile` được đọc và ghi trực tiếp từ bộ nhớ chính. Điều này đảm bảo rằng giá trị của biến luôn được cập nhật và nhất quán giữa các luồng.
+  - _Không Có Bộ Nhớ Đệm:_ Các biến `volatile` không được lưu trữ trong bộ nhớ đệm CPU hoặc bộ nhớ đệm của các luồng. Điều này tránh được vấn đề về tính nhất quán của bộ nhớ mà thường gặp phải trong các ứng dụng đa luồng.
+  - _Không Cần Đồng Bộ Hóa_: Sử dụng `volatile` giúp tránh việc phải sử dụng các cơ chế đồng bộ hóa phức tạp như `synchronized` hoặc `ReentrantLock`.
+
+```
+public class VolatileExample {
+    private static volatile boolean flag = false;
+
+    public static void main(String[] args) {
+        // create and start a new thread
+        new Thread(() -> {
+            while (!flag) {
+                // do some work
+            }
+            System.out.println("Thread finished");
+        }).start();
+
+        // set the flag to true after a delay
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        flag = true;
+    }
+}
+```
+
+```
+Thread finished
+```
+
 ## Atomic
 
-- Biến nguyên tử (`atomic variable`) là các biến cung cấp các thao tác nguyên tử để cập nhật và lấy giá trị.
+-
+- Biến nguyên tử (`atomic variable`) là các biến cung cấp các thao tác nguyên tử để cập nhật và lấy giá trị trên các _kiểu dữ liệu nguyên thủy_ như int, long, double, v.v..
 - Chúng đảm bảo rằng các thao tác này được thực hiện một cách an toàn trong môi trường đa luồng mà không cần sử dụng đồng bộ hóa (`synchronization`) hoặc khóa (`locks`)
 - Các lớp nguyên tử sử dụng `compare and swap (CAS)`, được hỗ trợ hầu hết trong các CPU hiện đại.
   https://howtodoinjava.com/java/multi-threading/compare-and-swap-cas-algorithm/
+
+- `Atomic` bên trong sử dụng kiểu `private volatile int value;`
+
 - Các loại biến atomic class:
   - AtomicBoolean
   - AtomicInteger
@@ -300,6 +342,10 @@ public class AtomicCounter {
     }
 }
 ```
+
+## ConcurentMap
+
+- `ConcurrentMap` là một interface trong Java, mở rộng từ Map và cung cấp các phương thức để thực hiện các thao tác đọc và ghi an toàn trong môi trường đa luồng mà không cần sử dụng `synchronized` hoặc các khóa đồng bộ khác.
 
 ## Concurrent HashMap
 
