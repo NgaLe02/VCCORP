@@ -108,7 +108,7 @@ public void someMethod() {
 ## Lock
 
 - `Lock` cung cấp cơ chế để kiểm soát quyền truy cập vào một tài nguyên chia sẻ bởi nhiều luồng.
-- Nó đảm bảo rằng chỉ có một luồng có thể truy cập tài nguyên tại một thời điểm, ngăn chặn tình trạng `race condition`.
+- Nó đảm bảo rằng **chỉ có một luồng có thể truy cập tài nguyên tại một thời điểm**, ngăn chặn tình trạng `race condition`.
 - Java cung cấp nhiều kiểu khóa khác nhau:
 
   - `ReentrantLock`: là một loại `lock` (khóa) có khả năng tái nhập (reentrant), có nghĩa là một luồng (thread) có thể nắm giữ nó nhiều lần và chỉ giải phóng khi nó đã được giải phóng bởi tất cả các lần nắm giữ.
@@ -251,11 +251,55 @@ Trong ví dụ này, hai luồng thread1 và thread2 sử dụng cùng một Ree
     }
   ```
 
+  Kết quả:
+
+  ```
+  Optimistic Lock Valid: true
+  Write Lock acquired
+  Optimistic Lock Valid: false
+  Write done
+  Optimistic Lock Valid: false
+  ```
+
   - Phương thức `tryConvertToWriteLock(long stamp)` trong `StampedLock` trong Java được sử dụng để cố gắng chuyển đổi một lock hiện tại từ khóa đọc (reading lock) hoặc khóa đọc lạc quan (optimistic reading lock) sang khóa ghi (writing lock). Phương thức này trả về một stamp mới nếu việc chuyển đổi thành công, hoặc trả về 0 nếu không thành công.
     => nâng cấp lock hiện tại của mình mà không cần phải giải phóng và yêu cầu lại từ đầu, giảm thiểu thời gian chờ đợi và cải thiện hiệu suất
     https://medium.com/@aayushbhatnagar_10462/java-concurrency-through-stamped-locks-eb65e9a675c1
 
-## Atomic Integer
+## Atomic
+
+- Biến nguyên tử (`atomic variable`) là các biến cung cấp các thao tác nguyên tử để cập nhật và lấy giá trị.
+- Chúng đảm bảo rằng các thao tác này được thực hiện một cách an toàn trong môi trường đa luồng mà không cần sử dụng đồng bộ hóa (`synchronization`) hoặc khóa (`locks`)
+- Các lớp nguyên tử sử dụng `compare and swap (CAS)`, được hỗ trợ hầu hết trong các CPU hiện đại.
+  https://howtodoinjava.com/java/multi-threading/compare-and-swap-cas-algorithm/
+- Các loại biến atomic class:
+  - AtomicBoolean
+  - AtomicInteger
+  - AtomicIntegerAray
+  - AtomicLong
+  - AtomicLongArray
+  - LongAdder
+  - LongAccumulator
+    ...
+
+### AtomicInteger
+
+- Bằng cách sử dụng `AtomicInteger` để thay thế cho `Integer`, có thể tăng số lượng đồng thời 1 cách an toàn theo luồng (`thread safe`) mà không cần đồng bộ hóa quyền truy cập vào biến.
+
+```
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class AtomicCounter {
+    private AtomicInteger counter = new AtomicInteger(0);
+
+    public void increment() {
+        counter.incrementAndGet();
+    }
+
+    public int getCounter() {
+        return counter.get();
+    }
+}
+```
 
 ## Concurrent HashMap
 
@@ -280,7 +324,3 @@ System.out.println("Running in a virtual thread: " + Thread.currentThread());
 - Virtual threads cung cấp một mô hình đơn giản hơn cho xử lý đồng thời, làm cho việc viết và duy trì các ứng dụng đồng thời trở nên dễ dàng hơn mà không cần lo lắng về quản lý luồng và hạn chế tài nguyên.
 
 https://viblo.asia/p/virtual-threads-nen-tang-moi-cho-ung-dung-java-quy-mo-lon-5pPLkxA8VRZ
-
-```
-
-```
