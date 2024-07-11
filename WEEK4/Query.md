@@ -141,3 +141,22 @@ SELECT \* FROM users WHERE username = 'john';
   - Trước khi tạo index, truy vấn phải quét toàn bộ bảng users.
   - Sau khi tạo index trên cột username, MySQL có thể sử dụng index để tìm kiếm nhanh hơn, chỉ quét đúng hàng có username là 'john'.
   - Điều này giảm đáng kể số lượng hàng được quét và tăng tốc độ truy vấn.
+
+### Ví dụ 2
+
+- Câu query không tốt:
+
+```
+SELECT * FROM products WHERE price > 1000;
+```
+
+![alt text](image-6.png)
+
+- Tối ưu:
+
+```
+CREATE INDEX idx_price ON products(price);
+EXPLAIN SELECT * FROM products WHERE price > 1000 LIMIT 10;
+```
+
+![alt text](image-7.png)
