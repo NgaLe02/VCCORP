@@ -114,8 +114,8 @@ Mỗi hàng trong EXPLAIN chứa các cột sau:
 SELECT \* FROM users WHERE username = 'john';
 ```
 
-- Explain:
-  ![alt text](image-4.png)
+![alt text](image-4.png)
+
 - Tối ưu:
 
 ```
@@ -123,5 +123,4 @@ CREATE INDEX idx_username ON users(username);
 SELECT \* FROM users WHERE username = 'john';
 ```
 
-- Explain:
-  ![alt text](image-5.png)
+![alt text](image-5.png)
