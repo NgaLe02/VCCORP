@@ -33,8 +33,6 @@ WHERE EXISTS (
 
 Sử dụng INNER JOIN thay vì subquery để kết nối dữ liệu từ các bảng khác nhau
 
-- **Sử dụng LIMIT hoặc TOP, OFFSET để giới hạn số hàng trả về**
-
 - **Hạn chế tối đa việc sử dụng ký tự đại diện**
 
   - Việc sử dụng các ký tự đại diện , chẳng hạn như % và \_, trong truy vấn SQL, có thể làm chậm hiệu suất truy vấn. Khi sử dụng ký tự đại diện, cơ sở dữ liệu phải quét toàn bộ bảng để tìm dữ liệu liên quan. Để tối ưu hóa các truy vấn SQL, điều quan trọng là giảm thiểu việc sử dụng các ký tự đại diện và chỉ sử dụng chúng khi thực sự cần thiết.
@@ -147,10 +145,10 @@ SELECT \* FROM users WHERE username = 'john';
 - Câu query không tốt:
 
 ```
-SELECT * FROM products WHERE price > 1000;
+SELECT * FROM orders o, customers c WHERE o.customer_id = c.id;
 ```
 
-![alt text](image-8.png)
+![alt text](image-10.png)
 
 - Nhận xét:
 
@@ -160,11 +158,10 @@ SELECT * FROM products WHERE price > 1000;
 - Tối ưu:
 
 ```
-CREATE INDEX idx_price ON products(price);
-EXPLAIN SELECT * FROM products WHERE price > 1000 LIMIT 10;
+ SELECT * FROM orders o INNER JOIN customers c ON o.customer_id = c.id;
 ```
 
-![alt text](image-9.png)
+![alt text](image-11.png)
 
 - Nhận xét:
   - type: Loại truy vấn, range nghĩa là MySQL sử dụng chỉ mục để tìm kiếm trong một phạm vi giá trị.
