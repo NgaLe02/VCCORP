@@ -116,8 +116,8 @@ SELECT \* FROM users WHERE username = 'john';
 
 ![alt text](image-4.png)
 
-=> `type`: `All` có nghĩa là truy vấn toàn bộ bảng (full table scan)
-rows: Số hàng được quét, ở đây là 3 (toàn bộ bảng).
+- `type`: `All` có nghĩa là truy vấn toàn bộ bảng (full table scan).
+- `rows`: Số hàng được quét, ở đây là 3 (toàn bộ bảng).
 
 - Tối ưu:
 
@@ -128,8 +128,9 @@ SELECT \* FROM users WHERE username = 'john';
 
 ![alt text](image-5.png)
 
-=> `type`: Loại truy vấn, `ref` có nghĩa là sử dụng index để tìm kiếm.
-`rows`: Số hàng được quét, ở đây là 1 (chỉ quét hàng có username là 'john').
+- `type`: Loại truy vấn, `ref` có nghĩa là sử dụng index để tìm kiếm.
+
+- `rows`: Số hàng được quét, ở đây là 1 (chỉ quét hàng có username là 'john').
 
 - Kết luận:
   - Trước khi tạo index, truy vấn phải quét toàn bộ bảng users.
