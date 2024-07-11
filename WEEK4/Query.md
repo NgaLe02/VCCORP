@@ -95,7 +95,7 @@ Mỗi hàng trong EXPLAIN chứa các cột sau:
 
 - **possible_keys**: Hiển thị `keys` có thể được dùng bởi MySQL để tìm dòng trong bảng, tuy nhiên nó có thể hoặc không thể được dùng
 - **key**: `Key` được chính thức MySql sử dụng để làm index để tìm kiếm. Cột này có thể chứa khóa không được liệt kê ở cột `possible_keys`
-- **len_key**: Chiều dài của khóa mà trình tối ưu truy vấn (Query Optimizer) sử dụng. Ví dụ, key_len mang giá trị 4 có nghĩa là nó cần bộ nhớ để lưu 4 ký tự.
+- **len_key**: Chiều dài của khóa mà trình tối ưu truy vấn (Query Optimizer) sử dụng. Nó phụ thuộc vào kiểu dữ liệu và các thuộc tính của cột. Ví dụ, key_len mang giá trị 4 có nghĩa là nó cần bộ nhớ để lưu 4 ký tự.
 - **ref**: Tên cột hoặc hằng số được dùng để so sánh với chỉ mục được nêu ra ở cột `key`. MySQL có thể lấy ra một hằng số, hoặc một cột cho quá trình thực hiện truy vấn
 - **rows**: Số lượng bản ghi đã được duyệt để trả về kết quả. Đây cũng là một cột hết sức quan trọng cho việc tối ưu truy vấn, nhất là khi bạn dùng JOIN hoặc truy vấn con.
 - **filtered**: Hiển thị tỷ lệ phần trăm các hàng từ bảng đó mà dự kiến sẽ vượt qua được các điều kiện WHERE trong câu truy vấn. Ví dụ, nếu cột filter là 10.00, điều đó có nghĩa là MySQL dự kiến khoảng 10% các hàng sẽ vượt qua các điều kiện WHERE.
@@ -116,6 +116,9 @@ SELECT \* FROM users WHERE username = 'john';
 
 ![alt text](image-4.png)
 
+=> `type`: `All` có nghĩa là truy vấn toàn bộ bảng (full table scan)
+rows: Số hàng được quét, ở đây là 3 (toàn bộ bảng).
+
 - Tối ưu:
 
 ```
@@ -124,3 +127,11 @@ SELECT \* FROM users WHERE username = 'john';
 ```
 
 ![alt text](image-5.png)
+
+=> `type`: Loại truy vấn, `ref` có nghĩa là sử dụng index để tìm kiếm.
+`rows`: Số hàng được quét, ở đây là 1 (chỉ quét hàng có username là 'john').
+
+- Kết luận:
+  - Trước khi tạo index, truy vấn phải quét toàn bộ bảng users.
+  - Sau khi tạo index trên cột username, MySQL có thể sử dụng index để tìm kiếm nhanh hơn, chỉ quét đúng hàng có username là 'john'.
+  - Điều này giảm đáng kể số lượng hàng được quét và tăng tốc độ truy vấn.
