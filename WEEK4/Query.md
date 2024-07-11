@@ -114,10 +114,13 @@ Mỗi hàng trong EXPLAIN chứa các cột sau:
 SELECT \* FROM users WHERE username = 'john';
 ```
 
-![alt text](image-4.png)
+![alt text](image-4.png).
 
-- `type`: `All` có nghĩa là truy vấn toàn bộ bảng (full table scan).
-- `rows`: Số hàng được quét, ở đây là 3 (toàn bộ bảng).
+- Nhận xét:
+
+  - `type`: `All` có nghĩa là truy vấn toàn bộ bảng (full table scan).
+
+  - `rows`: Số hàng được quét, ở đây là 3 (toàn bộ bảng).
 
 - Tối ưu:
 
@@ -127,6 +130,8 @@ SELECT \* FROM users WHERE username = 'john';
 ```
 
 ![alt text](image-5.png)
+
+- Nhận xét:
 
 - `type`: Loại truy vấn, `ref` có nghĩa là sử dụng index để tìm kiếm.
 
