@@ -133,9 +133,9 @@ SELECT \* FROM users WHERE username = 'john';
 
 - Nhận xét:
 
-- `type`: Loại truy vấn, `ref` có nghĩa là sử dụng index để tìm kiếm.
+  - `type`: Loại truy vấn, `ref` có nghĩa là sử dụng index để tìm kiếm.
 
-- `rows`: Số hàng được quét, ở đây là 1 (chỉ quét hàng có username là 'john').
+  - `rows`: Số hàng được quét, ở đây là 1 (chỉ quét hàng có username là 'john').
 
 - Kết luận:
   - Trước khi tạo index, truy vấn phải quét toàn bộ bảng users.
