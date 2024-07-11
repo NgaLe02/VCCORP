@@ -150,7 +150,12 @@ SELECT \* FROM users WHERE username = 'john';
 SELECT * FROM products WHERE price > 1000;
 ```
 
-![alt text](image-6.png)
+![alt text](image-8.png)
+
+- Nhận xét:
+
+  - `type`: Loại truy vấn, `ALL` có nghĩa là MySQL quét toàn bộ bảng (full table scan).
+  - `rows`: Số hàng MySQL dự đoán sẽ quét, ở đây là 5.
 
 - Tối ưu:
 
@@ -159,4 +164,8 @@ CREATE INDEX idx_price ON products(price);
 EXPLAIN SELECT * FROM products WHERE price > 1000 LIMIT 10;
 ```
 
-![alt text](image-7.png)
+![alt text](image-9.png)
+
+- Nhận xét:
+  - type: Loại truy vấn, range nghĩa là MySQL sử dụng chỉ mục để tìm kiếm trong một phạm vi giá trị.
+  - rows: Số hàng MySQL dự đoán sẽ quét, ở đây là 2.
