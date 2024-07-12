@@ -1,5 +1,27 @@
 Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhất 3 db thuộc loại sql, 3 db thuộc loại no sql). các khái niệm CAP, BASE, ACID, 3 dạng chuẩn của csdl.
 
+## Các loại DB
+
+### Cơ sở dữ liệu quan hệ (Relational Database):
+
+- Cơ sở dữ liệu quan hệ cũng là dạng database được sử dụng phổ biến nhất.
+- Mối quan hệ của các dữ liệu giúp dễ dàng quản lý và chúng được liên hệ dưới dạng bảng trực quan.
+- Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như MySQL, PostgreSQL, Oracle, MS SQL Server,..
+  ![alt text](image-15.png)
+
+### Cơ sở dữ liệu NOSQL
+
+- Cơ sở dữ liệu NoSQL cũng thuộc trong những dạng database quen thuộc.
+- Dạng database này giúp cho việc quản lý dữ liệu lớn dễ dàng và phân tích hiệu quả hơn.
+- Nó cho phép thao tác dữ liệu quan hệ và xác định dữ liệu khi chèn vào cơ sở dữ liệu.
+- Một ưu điểm của cơ sở dữ liệu NoSQL là các nhà phát triển có thể nhanh chóng thực hiện các thay đổi đối với cơ sở dữ liệu mà không ảnh hưởng đến các ứng dụng đang sử dụng cơ sở dữ liệu.
+- Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như Apache Cassandra, MongoDB, CouchDB, and CouchBase, Redis
+
+### Cơ sở dữ liệu hướng đối tượng
+
+https://www.geeksforgeeks.org/types-of-databases/
+https://aptech.fpt.edu.vn/database-la-gi.html
+
 ## CAP
 
 ## BASE
@@ -12,9 +34,9 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 
   - `Consistency` (Tính nhất quán): Cơ sở dữ liệu phải ở trạng thái hợp lý trước và sau khi giao dịch được thực thi. Điều này đảm bảo rằng dữ liệu không bị vi phạm các ràng buộc quyền lực, quan hệ hay ràng buộc ngữ nghĩa.
 
-  - `Isolation` (Tính độc lập): Mỗi giao dịch được thực hiện độc lập với các giao dịch khác, điều này ngăn chặn các thay đổi không mong muốn xảy ra khi nhiều giao dịch đang thực hiện đồng thời. Isolation đảm bảo tính nhất quán của cơ sở dữ liệu trong khi nhiều giao dịch đang diễn ra.
+  - `Isolation` (Tính độc lập): _Mỗi giao dịch được thực hiện độc lập với các giao dịch khác_, điều này ngăn chặn các thay đổi không mong muốn xảy ra khi nhiều giao dịch đang thực hiện đồng thời. Isolation đảm bảo tính nhất quán của cơ sở dữ liệu trong khi nhiều giao dịch đang diễn ra.
 
-  - `Durability` (Tính bền vững): Sau khi giao dịch được thực hiện và giao dịch được xác nhận thành công, các thay đổi được áp dụng vào cơ sở dữ liệu sẽ không bị mất do lỗi hệ thống hay lỗi phần cứng. Dữ liệu đã được lưu trữ sẽ được bảo vệ và khôi phục khi cần thiết.
+  - `Durability` (Tính bền vững): Sau khi giao dịch được thực hiện và giao dịch được xác nhận thành công, các thay đổi được áp dụng vào cơ sở dữ liệu sẽ không bị mất do lỗi hệ thống hay lỗi phần cứng. _Dữ liệu đã được lưu trữ sẽ được bảo vệ và khôi phục khi cần thiết._
 
 Các tính chất này cùng nhau tạo nên ACID để đảm bảo tính toàn vẹn và nhất quán của dữ liệu trong các hệ thống cơ sở dữ liệu. Các hệ thống quản lý cơ sở dữ liệu (DBMS) như MySQL cung cấp hỗ trợ ACID bằng cách triển khai các giải pháp và thuật toán phù hợp để đảm bảo các tính chất này cho các giao dịch dữ liệu.
 
