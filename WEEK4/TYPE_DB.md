@@ -51,33 +51,85 @@ Các tính chất này cùng nhau tạo nên ACID để đảm bảo tính toàn
 - Một quan hệ gọi là 1NF nếu
   - Miền giá trị của mỗi thuộc tính chỉ chứa giá trị đơn nguyên tử, không thể phân tách ra được
   - Giá trị của mỗi thuộc tính trong mỗi bộ phải là giá trị đơn
-    https://viblo.asia/p/tong-hop-ve-chuan-hoa-co-so-du-lieu-ORNZqP33K0n
-- CHuẩn hóa:
+- Chuẩn hóa:
 
-  - Tách các thuộc tính có miền giá trị đa nguyên tử thành các thuộc tính có miền giá trị đơn nguyên tử
+  - _Tách các thuộc tính có miền giá trị đa nguyên tử thành các thuộc tính có miền giá trị đơn nguyên tử_
     - VD: HOCSINH(MaHS, Tuoi, HoTen)
       Thuộc tính HoTen trong bảng trên là một thuộc tính chứa giá trị đa nguyên tử. HoTen bao gồm Họ và Tên.
       HOCSINH(MaHS, Tuoi, Ho, Ten)
-  - Tách các thuộc tính chứa giá trị đa trị ra thành một bảng riêng
+  - _Tách các thuộc tính chứa giá trị đa trị ra thành một bảng riêng_
 
-            - Ví dụ:
-              NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
+    - Ví dụ:
+      NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
 
-              | MaNV | MaChucVu | ThoiGianNhanChuc |
-              | ---- | -------- | ---------------- |
-              | 1    | 2 3       | 15-8-2019 16-8-2019 |
+                | MaNV | MaChucVu | ThoiGianNhanChuc |
+                | ---- | -------- | ---------------- |
+                | 1    | 2 3       | 15-8-2019 16-8-2019 |
 
-              |MaChucVu | TenChucVu |
-              | ---- | -------|
-              |3 | GiamDoc |
-              |2 | BaoVe |
+                |MaChucVu | TenChucVu |
+                | ---- | -------|
+                |3 | GiamDoc |
+                |2 | BaoVe |
 
-              NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
+                NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
 
-              | MaNV | MaChucVu | ThoiGianNhanChuc |
-              |------|----------|------------------|
-              | 1    | 2        | 15-8-2019        |
-              | 1    | 3        | 16-8-2019        |
+                | MaNV | MaChucVu | ThoiGianNhanChuc |
+                |------|----------|------------------|
+                | 1    | 2        | 15-8-2019        |
+                | 1    | 3        | 16-8-2019        |
 
-    https://funix.edu.vn/chia-se-kien-thuc/chuan-hoa-cac-quan-he-ve-cac-dang-chuan-co-ban/  
-     https://viblo.asia/p/cac-chuan-trong-co-so-du-lieu-va-cac-buoc-chuan-hoa-bWrZnEBpKxw
+### Dạng chuẩn 2 (2NF)
+
+- Một quan hệ gọi là 2NF nếu
+
+  - Quan hệ đó thỏa mãn chuẩn 1
+  - Mọi thuộc tính không khóa của quan hệ phụ thuộc hàm đầy đủ vào khóa chính
+
+- Chuẩn hóa
+
+  - Tách các thuộc tính không khóa phụ thuộc bộ phận vào khóa chính thành _quan hệ riêng_, khóa của quan hệ mới là khóa bộ phận tương ứng ban đầu
+  - Ví dụ 1: Cho quan hệ R = (ABCD), khoá chính là AB và tập phụ thuộc hàm là F = {AB => C, AB => D} là quan hệ đạt chuẩn 2NF.
+
+  - Ví dụ 2: Cho quan hệ R = (ABCD), khoá chính là AB và tập phụ thuộc hàm là F = {AB => C, AB => D, B => DC} là quan hệ không đạt chuẩn 2NF vì có B => DC là phụ thuộc hàm không đầy đủ vào khoá chính. Chúng ta sẽ đưa về dạng chuẩn 2NF như sau:
+    ![alt text](image-13.png)
+
+### Dạng chuẩn 3 (3NF)
+
+- Một quan hệ gọi là 3NF nếu
+
+  - Quan hệ đó thỏa mãn chuẩn 2
+  - Không có thuộc tính không khóa nào phụ thuộc bắc cầu vào khóa chính (Các thuộc tính không khoá phải phụ thuộc trực tiếp vào khoá chính).
+
+- Chuẩn hóa:
+
+  - Tách quan hệ mới gồm các thuộc tính phụ thuộc bắc cầu và thuộc tính không khóa mà nó phụ thuộc vào
+  - Loại bỏ các thuộc tính phụ thuộc bắc cầu vào khóa chính trong quan hệ ban đầu
+
+- Ví dụ:
+
+  - Ví dụ 1: Cho quan hệ R = (ABCDGH), khoá chính là AB và tập phụ thuộc hàm F = {AB -> C, AB -> D, AB -> GH} là quan hệ đạt chuẩn 3NF.
+
+  - Ví dụ 2: Cho quan hệ R = (ABCDGH) , khoá là AB và tập phụ thuộc hàm F = {AB -> C, AB -> D, AB -> GH, G -> DH}. Đây là quan hệ không đạt chuẩn 3NF vì có G -> DH là phụ thuộc hàm gián tiếp vào khoá. Chúng ta sẽ đưa nó về dạng chuẩn 3NF như sau:
+    ![alt text](image-14.png)
+
+### Dạng chuẩn BCNF (Boyce – Codd Normal Form)
+
+- Một quan hệ được gọi là ở dạng chuẩn Boyce-Codd (BCNF) nếu:
+
+  - Thỏa mãn dạng chuẩn 3NF
+  - Không có thuộc tính khóa phụ thuộc hàm vào thuộc tính không khóa.
+
+- Chuẩn hóa
+
+  - Tách các thuộc tính không khóa và thuộc tính khóa phụ thuộc hàm vào nó thành quan hệ mới, thuộc tính không khóa đó trở thành khóa trong quan hệ mới.
+  - Loại bỏ các thuộc tính khóa ở bước 1 khỏi lược đồ gốc
+  - Bổ sung các thuộc tính không khóa mà thuộc tính khóa (đã loại bỏ ở bước 2) phụ thuộc vào vào khóa của quan hệ gốc
+
+- Ví dụ:
+
+  - Ví dụ 1: Cho quan hệ R = (ABCDGH), khoá là AB và tập phụ thuộc hàm F = {AB -> C, AB -> D, AB -> GH} là quan hệ đạt chuẩn BCNF.
+
+  - Ví dụ 2: Cho quan hệ R = (ABCDGH) , khoá là AB và tập phụ thuộc hàm F = {AB -> C, AB -> D, AB -> GH, H -> B}. Đây là quan hệ không đạt chuẩn hóa dữ liệu BCNF vì có thuộc tính khoá B phụ thuộc hàm vào thuộc tính không khoá H. Chúng ta sẽ đưa nó về dạng chuẩn BCNF như sau:
+
+    https://funix.edu.vn/chia-se-kien-thuc/chuan-hoa-cac-quan-he-ve-cac-dang-chuan-co-ban/
+    https://viblo.asia/p/cac-chuan-trong-co-so-du-lieu-va-cac-buoc-chuan-hoa-bWrZnEBpKxw
