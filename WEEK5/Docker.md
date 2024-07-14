@@ -30,26 +30,27 @@
     - Nổi tiếng nhất chính là Docker Hub, ngoài ra bạn có thể tự xây dựng một Docker registry riêng tư khác để lưu trữ Docker image.
   - **Docker object**:
 
-        - Khi sử dụng Docker, bạn sẽ khởi tạo và sử dụng image, container, network, volume, plugin và các đối tượng khác.
-        - **Docker Image**:
-          - Docker Image là template read-only (chỉ cho phép đọc) với các hướng dẫn để tạo Docker container.
-          - Image sẽ được sử dụng để đóng gói các ứng dụng và các thành phần đi kèm của ứng dụng, được lưu trữ ở server hoặc trên registry.
-          - Ví dụ bạn có thể sử dụng Dockerfile để tạo ra một Docker image sử dụng hệ điều hành Ubuntu và cài đặt Apache server với những cài đặt, cấu hình tùy chỉnh của riêng mình.
-        - **Docker container**:
-          - Container được chạy dựa trên 1 image cụ thể. Bạn có thể tạo, start, stop, move, delete container.
-          - Bạn cũng có thể kết nối các container với nhau hoặc attach storage cho nó, thậm chí là tạo lại một image từ chính state hiện tại của container
-          - Mặc định 1 container được “cách ly” với các container và server nếu người dùng không có các cài đặt gì thêm.
-        - **Docker volume**:
+    - Khi sử dụng Docker, bạn sẽ khởi tạo và sử dụng image, container, network, volume, plugin và các đối tượng khác.
 
-          - Volume được thiết kể để làm nơi lưu trữ các dữ liệu độc lập với vòng đời của container.
+    - **Docker Image**:
+      - Docker Image là template read-only (chỉ cho phép đọc) với các hướng dẫn để tạo Docker container.
+      - Image sẽ được sử dụng để đóng gói các ứng dụng và các thành phần đi kèm của ứng dụng, được lưu trữ ở server hoặc trên registry.
+      - Ví dụ bạn có thể sử dụng Dockerfile để tạo ra một Docker image sử dụng hệ điều hành Ubuntu và cài đặt Apache server với những cài đặt, cấu hình tùy chỉnh của riêng mình.
+    - **Docker container**:
+      - Container được chạy dựa trên 1 image cụ thể. Bạn có thể tạo, start, stop, move, delete container.
+      - Bạn cũng có thể kết nối các container với nhau hoặc attach storage cho nó, thậm chí là tạo lại một image từ chính state hiện tại của container
+      - Mặc định 1 container được “cách ly” với các container và server nếu người dùng không có các cài đặt gì thêm.
+    - **Docker volume**:
 
-        - **Docker network**:
+      - Volume được thiết kể để làm nơi lưu trữ các dữ liệu độc lập với vòng đời của container.
 
-          - Cung cấp một private network mà chỉ tồn tại giữa container và server, giúp các container có thể giao tiếp được với nhau một cách dễ dàng.
+    - **Docker network**:
 
-        - **Docker service**:
+      - Cung cấp một private network mà chỉ tồn tại giữa container và server, giúp các container có thể giao tiếp được với nhau một cách dễ dàng.
 
-          - Service cho phép bạn mở rộng các contaner thông qua nhiều Docker daemon, chúng giao tiếp với nhau thông qua swarm cluster bao gồm nhiều manager và worker. Mỗi một node của swarm là 1 Docker daemon giao tiếp với nhau bằng cách sử dụng Docker API. Theo mặc định thì service được cân bằng tải trên các node.
+    - **Docker service**:
+
+      - Service cho phép bạn mở rộng các contaner thông qua nhiều Docker daemon, chúng giao tiếp với nhau thông qua swarm cluster bao gồm nhiều manager và worker. Mỗi một node của swarm là 1 Docker daemon giao tiếp với nhau bằng cách sử dụng Docker API. Theo mặc định thì service được cân bằng tải trên các node.
 
     https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
     https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
