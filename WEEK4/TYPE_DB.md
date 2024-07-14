@@ -2,6 +2,16 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 
 ## Các loại DB
 
+## So sánh sql và nosql
+
+|               | SQL                                                    | NoSQL                                       |
+| ------------- | ------------------------------------------------------ | ------------------------------------------- |
+| Kiểu dữ liệu  | Cấu trúc                                               | Không cấu trúc, bán cấu trúc                |
+| Mô hình       | Quan hệ                                                | Key-Value, Document, Wide-Column, Graph     |
+| ACID/BASE     | ACID                                                   | BASE                                        |
+| Phân tán      | Không tự nhiên                                         | Tự nhiên                                    |
+| Thích hợp với | Dữ liệu phức tạp, nghiệp vụ yêu cầu tính nhất quán cao | Dữ liệu lớn, phân tán, nhanh chóng thay đổi |
+
 ### Cơ sở dữ liệu quan hệ (Relational Database):
 
 - Cơ sở dữ liệu quan hệ cũng là dạng database được sử dụng phổ biến nhất.
@@ -24,7 +34,26 @@ https://aptech.fpt.edu.vn/database-la-gi.html
 
 ## CAP
 
+- Ba đặc điểm của hệ thống phân tán mà định lý `CAP` đề cập đến:
+  - `Tính nhất quán (Consistency)`: Đảm bảo rằng tất cả các bản sao dữ liệu trong hệ thống đều phản ánh trạng thái mới nhất sau khi thực hiện bất kỳ thao tác nào.
+  - `Tính khả dụng (Availibility)`: Đảm bảo rằng tất cả các nút trong hệ thống đều có thể truy cập và xử lý yêu cầu của người dùng, ngay cả khi một số nút bị lỗi hoặc không thể truy cập được.
+  - `Dung sai phân vùng (Partition tolerance)`: Đảm bảo rằng hệ thống có thể tiếp tục hoạt động và cung cấp dữ liệu ngay cả khi xảy ra sự cố chia cắt mạng, khiến một số nút trong hệ thống không thể giao tiếp với nhau.
+    https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_CAP
+
 ## BASE
+
+- `BASE` là viết tắt của Basically Available, Soft-state, Eventual consistency (Cơ bản khả dụng, Trạng thái mềm, Nhất quán cuối cùng). Đây là một mô hình tính nhất quán dữ liệu thường được sử dụng trong các hệ thống cơ sở dữ liệu phi quan hệ (`NoSQL`).
+
+  - `Cơ bản khả dụng (Basically Available)`: Đảm bảo rằng dữ liệu có sẵn cho người dùng hầu hết thời gian, ngay cả khi đang có cập nhật hoặc thay đổi.
+  - `Trạng thái mềm (Soft-state)`: Cho phép trạng thái của dữ liệu có thể thay đổi theo thời gian mà không cần đồng bộ hóa ngay lập tức với tất cả các bản sao.
+  - `Nhất quán cuối cùng (Eventual consistency)`: Đảm bảo rằng tất cả các bản sao dữ liệu trong hệ thống sẽ cuối cùng được cập nhật và đồng bộ hóa với nhau, nhưng có thể mất một thời gian để điều này xảy ra.
+
+- BASE là một mô hình tính nhất quán dữ liệu phù hợp cho các hệ thống cần có độ mở rộng cao và khả năng xử lý lượng dữ liệu lớn. Tuy nhiên, cần lưu ý rằng nó có mức độ nhất quán dữ liệu thấp hơn so với mô hình ACID và có thể xảy ra mâu thuẫn dữ liệu.
+
+- Một số ví dụ về ứng dụng của BASE trong thực tế:
+  - Mạng xã hội
+  - Hệ thống lưu trữ đám mây
+  - Ứng dụng web thời gian thực
 
 ## ACID
 
