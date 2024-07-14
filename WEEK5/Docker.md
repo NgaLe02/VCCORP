@@ -5,10 +5,9 @@
 
 ## Docker Engine là gì?
 
-- Docker engine là một phần mền dạng “client-server” bao gồm các thành phần chính sau:
-  - Server hay còn được gọi là docker daemon (dockerd): chịu trách nhiệm tạo, quản lý các Docker objects như images, containers, networks, volume.
-  - REST API: là nơi nhận các yêu cầu từ phía Docker client và giao tiếp với Docker daemon để yêu cầu Docker daemon thực thi các yêu cầu từ phía người dùng.
-  - Docker CLI có vai trò là client, cung cấp giao diện tương tác với người dùng (command line) và gửi các request tương ứng đến Docker Daemon thông qua REST API. (Ví dụ docker images, docker ps, docker rmi image v.v..)
+- **Docker engine** là một phần mền dạng “client-server” bao gồm các thành phần chính sau:
+  - **Server** hay còn được gọi là **docker daemon (dockerd)**: chịu trách nhiệm tạo, quản lý các **Docker objects** như **images**, **containers**, **networks**, **volume**.
+  - **REST API**: là nơi nhận các yêu cầu từ phía **Docker client** và giao tiếp với **Docker daemon** để yêu cầu **Docker daemon** thực thi các yêu cầu từ phía người dùng. -**Docker CLI** có vai trò là client, cung cấp giao diện tương tác với người dùng (command line) và gửi các request tương ứng đến Docker Daemon thông qua REST API. (Ví dụ docker images, docker ps, docker rmi image v.v..)
     ![alt text](image.png)
 
 ## Kiến trúc của Docker
