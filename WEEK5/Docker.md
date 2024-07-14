@@ -17,8 +17,12 @@
 - Docker client và Docker server có thể nằm trên cùng một server hoặc khác server.
 - Chúng giao tiếp với nhau thông qua REST API dựa trên UNIX sockets hoặc network interface.
   ![alt text](image-1.png)
-  https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
-  https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
+
+  - Docker daemon:
+    - Docker daemon (dockerd) là thành phần core, lắng nghe API request và quản lý các Docker object.
+    - Docker daemon host này cũng có thể giao tiếp được với Docker daemon ở host khác.
+      https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
+      https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
 
 ## Các lệnh Docker cơ bản
 
