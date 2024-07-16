@@ -55,62 +55,6 @@
     https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
     https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
 
-## Các lệnh Docker cơ bản
-
-- **docker --version**: Hiển thị phiên bản Docker hiện tại.
-
-  ```
-  docker --version
-  ```
-
-- **docker pull**: Kéo một Docker image từ Docker Hub.
-
-```
-docker pull <image_name>
-```
-
-- **docker run**: Tạo và chạy một container từ một Docker image.
-
-```
-docker run <image_name>
-```
-
-- **docker ps**: Liệt kê các container đang chạy.
-
-```
-docker ps
-```
-
-- **docker ps -a**: Liệt kê tất cả các container, bao gồm cả các container đã dừng.
-
-```
-docker ps -a
-```
-
-- **docker stop**: Dừng một container đang chạy.
-
-```
-docker stop <container_id>
-```
-
-- **docker start**: Khởi động lại một container đã dừng.
-
-```
-docker start <container_id>
-```
-
-- **docker rm**: Xóa một container đã dừng.
-
-```
-docker rm <container_id>
-```
-
-- **docker rmi**: Xóa một Docker image.
-
-```
-docker rmi <image_name>
-```
-
 https://kungfutech.edu.vn/bai-viet/docker/docker-la-gi
 
 https://kungfutech.edu.vn/khoa-hoc/docker

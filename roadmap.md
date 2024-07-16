@@ -56,6 +56,7 @@ Các yêu cầu chung:
 - schynonized: class
 - lập trình luồng trong java: future
 - concurenncy vs //
+- thread daemon
 
 ### 3.3. json
 
