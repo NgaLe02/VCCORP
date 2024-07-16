@@ -316,7 +316,8 @@ select * from products where category = 'Electronics' order by price;
 - Câu query không tốt:
 
 ````
-Select * from products where name like '%laptop%' or description like '%laptop%';```
+Select * from products where name like '%laptop%' or description like '%laptop%';
+```
 ![alt text](image-30.png)
 - Tối ưu:
 
