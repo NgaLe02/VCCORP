@@ -5,7 +5,6 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 - Cơ sở dữ liệu quan hệ cũng là dạng database được sử dụng phổ biến nhất.
 - Mối quan hệ của các dữ liệu giúp dễ dàng quản lý và chúng được liên hệ dưới dạng bảng trực quan.
 - Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như MySQL, PostgreSQL, Oracle, MS SQL Server,..
-  ![alt text](image-15.png)
 
 ### MySQL
 
@@ -24,19 +23,33 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 
 ### Oracle Database
 
+- Là một hệ quản trị cơ sở dữ liệu mạnh mẽ, cung cấp tính năng ACID, hỗ trợ quản lý dữ liệu lớn và các tính năng quản lý cao cấp.
+- Hỗ trợ quản lý dữ liệu có cấu trúc và không cấu trúc, lưu trữ dữ liệu theo cấu trúc bảng và mối quan hệ giữa chúng.
+
 ## Cơ sở dữ liệu NOSQL
 
 - Cơ sở dữ liệu NoSQL cũng thuộc trong những dạng database quen thuộc.
 - Dạng database này giúp cho việc quản lý dữ liệu lớn dễ dàng và phân tích hiệu quả hơn.
-- Nó cho phép thao tác dữ liệu quan hệ và xác định dữ liệu khi chèn vào cơ sở dữ liệu.
-- Một ưu điểm của cơ sở dữ liệu NoSQL là các nhà phát triển có thể nhanh chóng thực hiện các thay đổi đối với cơ sở dữ liệu mà không ảnh hưởng đến các ứng dụng đang sử dụng cơ sở dữ liệu.
 - Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như Apache Cassandra, MongoDB, CouchDB, and CouchBase, Redis
 
 ### MongoDB
 
+- MongoDB là một hệ quản trị cơ sở dữ liệu NoSQL dạng tài liệu (JSON), được sử dụng phổ biến cho các ứng dụng web, lưu trữ dữ liệu phi cấu trúc và Internet vạn vật (IoT).
+
 ### Redis
 
+- Redis là một hệ quản trị cơ sở dữ liệu NoSQL dạng khóa-giá trị (key-value) được sử dụng phổ biến cho hệ thống cache, hệ thống nhắn tin và bảng xếp hạng
+
+- Ví dụ:
+  - Khóa: user:1
+    Giá trị:
+    name: "John Doe"
+    email: "[đã xoá địa chỉ email]"
+    address: "123 Main Street"
+
 ### Cassandra
+
+- Cassandra là một hệ quản trị cơ sở dữ liệu NoSQL dạng cột (wide-column) được sử dụng phổ biến cho dữ liệu lớn và phân tích dữ liệu.
 
 https://www.geeksforgeeks.org/types-of-databases/
 https://aptech.fpt.edu.vn/database-la-gi.html
