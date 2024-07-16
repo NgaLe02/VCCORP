@@ -312,3 +312,9 @@ select * from products   where  name = "Laptop X" and category = 'Electronics' ;
 ```
 
 ```
+
+- Refe:
+  - https://medium.com/datadenys/using-explain-in-mysql-to-analyze-and-improve-query-performance-f58357deb2aa
+  - https://blog.devops.dev/sql-query-optimization-with-10-proven-techniques-for-enhanced-performance-b806e4952e46
+  - https://planetscale.com/learn/courses/mysql-for-developers/indexes/fulltext-indexes?autoplay=1
+  - https://youtu.be/YuRO9-rOgv4?si=DzF_4Frbxpw2IZoY
