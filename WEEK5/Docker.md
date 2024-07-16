@@ -20,7 +20,8 @@
 
   - **Docker daemon**:
     - Docker daemon (dockerd) là thành phần core, lắng nghe API request và quản lý các Docker object.
-    - Docker daemon host này cũng có thể giao tiếp được với Docker daemon ở host khác. -**Docker client**:
+    - Docker daemon host này cũng có thể giao tiếp được với Docker daemon ở host khác.
+  - **Docker client**:
     - Docker client (docker) là phương thức chính để người dùng thao tác với Docker.
     - Khi người dùng gõ lệnh docker run imageABC tức là người dùng sử dụng CLI và gửi request đến dockerd thông qua api, và sau đó Docker daemon sẽ xử lý tiếp.
     - Docker client có thể giao tiếp và gửi request đến nhiều Docker daemon.
