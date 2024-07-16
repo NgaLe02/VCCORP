@@ -221,6 +221,86 @@ explain select * from orders  ORDER BY amount desc limit 2 ;
 
 ### Ví dụ 6
 
+Ban đầu có
+
+```
+alter table products add index idx_category(category);
+```
+
+- Câu query không tốt:
+
+```
+select * from products   where category = 'Electronics' and name = "Laptop X";
+```
+
+![alt text](image-24.png)
+
+- Tối ưu:
+
+```
+alter table products drop index idx_category;
+alter table products add index idx_multi(category, name);
+
+select * from products where category = 'Electronics' and name = "Laptop X";
+```
+
+![alt text](image-23.png)
+
+### Ví dụ 7
+
+Ban đầu có
+
+```
+alter table products add index idx_multi(category, name);
+```
+
+- Câu query không tốt:
+
+```
+select * from products   where  name = "Laptop X" ;
+```
+
+- Tối ưu:
+
+```
+alter table products drop index idx_multi;
+alter table products add index idx_multi(name, category);
+
+select * from products   where  name = "Laptop X" and category = 'Electronics' ;
+```
+
+![alt text](image-25.png)
+
+### Ví dụ 8
+
+- Câu query không tốt:
+
+```
+
+```
+
+- Tối ưu:
+
+```
+
+```
+
+### Ví dụ 9
+
+- Câu query không tốt:
+
+```
+
+```
+
+- Tối ưu:
+
+```
+
+```
+
+### Ví dụ 10
+
 - Câu query không tốt:
 
 ```
