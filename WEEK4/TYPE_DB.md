@@ -27,8 +27,6 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 - Một ưu điểm của cơ sở dữ liệu NoSQL là các nhà phát triển có thể nhanh chóng thực hiện các thay đổi đối với cơ sở dữ liệu mà không ảnh hưởng đến các ứng dụng đang sử dụng cơ sở dữ liệu.
 - Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như Apache Cassandra, MongoDB, CouchDB, and CouchBase, Redis
 
-### Cơ sở dữ liệu hướng đối tượng
-
 https://www.geeksforgeeks.org/types-of-databases/
 https://aptech.fpt.edu.vn/database-la-gi.html
 

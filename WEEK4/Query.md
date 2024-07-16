@@ -144,10 +144,10 @@ SELECT \* FROM users WHERE username = 'john';
 - Câu query không tốt:
 
 ```
-SELECT * FROM orders o, customers c WHERE o.customer_id = c.id;
+SELECT * FROM orders o, customers c WHERE o.customer_id = c.customer_id;
 ```
 
-![alt text](image-10.png)
+![alt text](image-17.png)
 
 - Nhận xét:
 
@@ -157,10 +157,12 @@ SELECT * FROM orders o, customers c WHERE o.customer_id = c.id;
 - Tối ưu:
 
 ```
- SELECT * FROM orders o INNER JOIN customers c ON o.customer_id = c.id;
+alter table orders add index(customer_id);
+alter table customers add index(customer_id);
+SELECT * FROM orders o INNER JOIN customers c ON o.customer_id = c.customer_id;
 ```
 
-![alt text](image-11.png)
+![alt text](image-16.png)
 
 - Nhận xét:
   - type: Loại truy vấn, range nghĩa là MySQL sử dụng chỉ mục để tìm kiếm trong một phạm vi giá trị.
