@@ -315,23 +315,26 @@ select * from products where category = 'Electronics' order by price;
 
 - Câu query không tốt:
 
-````
+```
 Select * from products where name like '%laptop%' or description like '%laptop%';
 ```
+
 ![alt text](image-30.png)
+
 - Tối ưu:
 
-````
+```
 
 Alter table products ADD FULLTEXT idx_fulltext(name, description);
 
 Select \* from products where match(name, description) AGAINST ('laptop');
 
 ```
+
 ![alt text](image-31.png)
+
 - Ref:
   - https://medium.com/datadenys/using-explain-in-mysql-to-analyze-and-improve-query-performance-f58357deb2aa
   - https://blog.devops.dev/sql-query-optimization-with-10-proven-techniques-for-enhanced-performance-b806e4952e46
   - https://planetscale.com/learn/courses/mysql-for-developers/indexes/fulltext-indexes?autoplay=1
   - https://youtu.be/YuRO9-rOgv4?si=DzF_4Frbxpw2IZoY
-```
