@@ -164,6 +164,66 @@ SELECT * FROM orders o INNER JOIN customers c ON o.customer_id = c.customer_id;
 - Câu query không tốt:
 
 ```
+SELECT * FROM customers WHERE email LIKE 'j%';
+```
+
+![alt text](image-19.png)
+
+- Tối ưu:
+
+```
+alter table customers add index(email);
+SELECT * FROM customers WHERE email LIKE 'j%';
+```
+
+![alt text](image-18.png)
+
+### Ví dụ 4
+
+```
+alter table customers add index (email);
+```
+
+- Câu query không tốt:
+
+```
+ SELECT * FROM customers WHERE email LIKE '%j';
+```
+
+![alt text](image-20.png)
+
+- Tối ưu:
+
+```
+SELECT * FROM customers WHERE email LIKE 'j%';
+```
+
+![alt text](image-18.png)
+
+### Ví dụ 5
+
+- Câu query không tốt:
+
+```
+select * from orders  ORDER BY amount desc limit 2 ;
+```
+
+![alt text](image-22.png)
+
+- Tối ưu:
+
+```
+alter table orders add index idx_amount(amount);
+explain select * from orders  ORDER BY amount desc limit 2 ;
+```
+
+![alt text](image-21.png)
+
+### Ví dụ 6
+
+- Câu query không tốt:
+
+```
 
 ```
 
