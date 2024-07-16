@@ -113,21 +113,21 @@ Các tính chất này cùng nhau tạo nên ACID để đảm bảo tính toàn
     - Ví dụ:
       NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
 
-                | MaNV | MaChucVu | ThoiGianNhanChuc |
-                | ---- | -------- | ---------------- |
-                | 1    | 2 3       | 15-8-2019 16-8-2019 |
+      | MaNV | MaChucVu | ThoiGianNhanChuc    |
+      | ---- | -------- | ------------------- |
+      | 1    | 2 3      | 15-8-2019 16-8-2019 |
 
-                |MaChucVu | TenChucVu |
-                | ---- | -------|
-                |3 | GiamDoc |
-                |2 | BaoVe |
+      | MaChucVu | TenChucVu |
+      | -------- | --------- |
+      | 3        | GiamDoc   |
+      | 2        | BaoVe     |
 
-                NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
+      NhanVien_ChucVu(MaNV, MaChucVu, ThoiGianNhanChuc)
 
-                | MaNV | MaChucVu | ThoiGianNhanChuc |
-                |------|----------|------------------|
-                | 1    | 2        | 15-8-2019        |
-                | 1    | 3        | 16-8-2019        |
+      | MaNV | MaChucVu | ThoiGianNhanChuc |
+      | ---- | -------- | ---------------- |
+      | 1    | 2        | 15-8-2019        |
+      | 1    | 3        | 16-8-2019        |
 
 ### Dạng chuẩn 2 (2NF)
 
