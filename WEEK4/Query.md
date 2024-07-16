@@ -276,14 +276,20 @@ select * from products   where  name = "Laptop X" and category = 'Electronics' ;
 - Câu query không tốt:
 
 ```
-
+SELECT * FROM USERs WHERE MONTH(registration_date) = 1;
 ```
+
+![alt text](image-27.png)
 
 - Tối ưu:
 
 ```
+alter table USERs add index idx_month_reg_date((MONTH(registration_date)));
 
+SELECT * FROM USERs WHERE MONTH(registration_date) = 1;
 ```
+
+![alt text](image-26.png)
 
 ### Ví dụ 9
 
@@ -313,7 +319,7 @@ select * from products   where  name = "Laptop X" and category = 'Electronics' ;
 
 ```
 
-- Refe:
+- Ref:
   - https://medium.com/datadenys/using-explain-in-mysql-to-analyze-and-improve-query-performance-f58357deb2aa
   - https://blog.devops.dev/sql-query-optimization-with-10-proven-techniques-for-enhanced-performance-b806e4952e46
   - https://planetscale.com/learn/courses/mysql-for-developers/indexes/fulltext-indexes?autoplay=1

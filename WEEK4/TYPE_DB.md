@@ -2,16 +2,6 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 
 ## Các loại DB
 
-## So sánh sql và nosql
-
-|               | SQL                                                    | NoSQL                                       |
-| ------------- | ------------------------------------------------------ | ------------------------------------------- |
-| Kiểu dữ liệu  | Cấu trúc                                               | Không cấu trúc, bán cấu trúc                |
-| Mô hình       | Quan hệ                                                | Key-Value, Document, Wide-Column, Graph     |
-| ACID/BASE     | ACID                                                   | BASE                                        |
-| Phân tán      | Không tự nhiên                                         | Tự nhiên                                    |
-| Thích hợp với | Dữ liệu phức tạp, nghiệp vụ yêu cầu tính nhất quán cao | Dữ liệu lớn, phân tán, nhanh chóng thay đổi |
-
 ### Cơ sở dữ liệu quan hệ (Relational Database):
 
 - Cơ sở dữ liệu quan hệ cũng là dạng database được sử dụng phổ biến nhất.
@@ -29,6 +19,16 @@ Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhấ
 
 https://www.geeksforgeeks.org/types-of-databases/
 https://aptech.fpt.edu.vn/database-la-gi.html
+
+### So sánh sql và nosql
+
+|               | SQL                                                    | NoSQL                                       |
+| ------------- | ------------------------------------------------------ | ------------------------------------------- |
+| Kiểu dữ liệu  | Cấu trúc                                               | Không cấu trúc, bán cấu trúc                |
+| Mô hình       | Quan hệ                                                | Key-Value, Document, Wide-Column, Graph     |
+| ACID/BASE     | ACID                                                   | BASE                                        |
+| Phân tán      | Không tự nhiên                                         | Tự nhiên                                    |
+| Thích hợp với | Dữ liệu phức tạp, nghiệp vụ yêu cầu tính nhất quán cao | Dữ liệu lớn, phân tán, nhanh chóng thay đổi |
 
 ## CAP
 
