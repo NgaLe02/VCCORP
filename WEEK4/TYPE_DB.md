@@ -1,21 +1,42 @@
 Yêu cầu (3): Tìm hiểu về các loại db và trình bày lại (ít nhất 3 db thuộc loại sql, 3 db thuộc loại no sql). các khái niệm CAP, BASE, ACID, 3 dạng chuẩn của csdl.
 
-## Các loại DB
-
-### Cơ sở dữ liệu quan hệ (Relational Database):
+## Cơ sở dữ liệu quan hệ (Relational Database):
 
 - Cơ sở dữ liệu quan hệ cũng là dạng database được sử dụng phổ biến nhất.
 - Mối quan hệ của các dữ liệu giúp dễ dàng quản lý và chúng được liên hệ dưới dạng bảng trực quan.
 - Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như MySQL, PostgreSQL, Oracle, MS SQL Server,..
   ![alt text](image-15.png)
 
-### Cơ sở dữ liệu NOSQL
+### MySQL
+
+- MySQL là máy chủ cơ sở dữ liệu SQL mã nguồn mở, phổ biến và dễ sử dụng nhất được sử dụng rộng rãi để phát triển ứng dụng web.
+
+- MySQL tuân thủ hệ thống ACID để đảm bảo tính nhất quán trong giao dịch và cung cấp nhiều Connectors và API khác nhau như C, C++, Java, PHP,...
+
+### PostgreSQL
+
+- PostgreSQL là mã nguồn mở (open-source) và không bị kiểm soát bởi bất kỳ doanh nghiệp nào mà được xuất bản trên Github.
+
+- Không giống PostgreSQL là một hệ thống quản lý cơ sở dữ liệu có cấu trúc đối tượng (ORDBMS) được thiết kế để hỗ trợ các mô hình dữ liệu phức tạp và đa dạng hơn.
+
+- Ưu điểm:
+  - Điểm nổi bật nhất của PostgreSQL chính là khả năng mở rộng theo chiều dọc và tuân thủ các tiêu chuẩn ACID.
+
+### Oracle Database
+
+## Cơ sở dữ liệu NOSQL
 
 - Cơ sở dữ liệu NoSQL cũng thuộc trong những dạng database quen thuộc.
 - Dạng database này giúp cho việc quản lý dữ liệu lớn dễ dàng và phân tích hiệu quả hơn.
 - Nó cho phép thao tác dữ liệu quan hệ và xác định dữ liệu khi chèn vào cơ sở dữ liệu.
 - Một ưu điểm của cơ sở dữ liệu NoSQL là các nhà phát triển có thể nhanh chóng thực hiện các thay đổi đối với cơ sở dữ liệu mà không ảnh hưởng đến các ứng dụng đang sử dụng cơ sở dữ liệu.
 - Một số hệ quản trị cơ sở dữ liệu hỗ trợ điển hình như Apache Cassandra, MongoDB, CouchDB, and CouchBase, Redis
+
+### MongoDB
+
+### Redis
+
+### Cassandra
 
 https://www.geeksforgeeks.org/types-of-databases/
 https://aptech.fpt.edu.vn/database-la-gi.html

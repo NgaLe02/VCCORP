@@ -52,6 +52,10 @@ Các yêu cầu chung:
 - tham khảo: http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
 - tìm hiểu lock, atomic integer, concurrent hashmap, race condition, virtual thread(java 21)
 - Seminar: thực tập sinh trong phần này cần làm silde thuyết trình về những tìm hiểu của mình và trình bày với team.
+- deadlock, liveness, livelock, starvation
+- schynonized: class
+- lập trình luồng trong java: future
+- concurenncy vs //
 
 ### 3.3. json
 
