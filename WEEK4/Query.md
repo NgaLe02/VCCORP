@@ -149,11 +149,6 @@ SELECT * FROM orders o, customers c WHERE o.customer_id = c.customer_id;
 
 ![alt text](image-17.png)
 
-- Nhận xét:
-
-  - `type`: Loại truy vấn, `ALL` có nghĩa là MySQL quét toàn bộ bảng (full table scan).
-  - `rows`: Số hàng MySQL dự đoán sẽ quét, ở đây là 5.
-
 - Tối ưu:
 
 ```
@@ -164,6 +159,16 @@ SELECT * FROM orders o INNER JOIN customers c ON o.customer_id = c.customer_id;
 
 ![alt text](image-16.png)
 
-- Nhận xét:
-  - type: Loại truy vấn, range nghĩa là MySQL sử dụng chỉ mục để tìm kiếm trong một phạm vi giá trị.
-  - rows: Số hàng MySQL dự đoán sẽ quét, ở đây là 2.
+### Ví dụ 3
+
+- Câu query không tốt:
+
+```
+
+```
+
+- Tối ưu:
+
+```
+
+```
