@@ -1,7 +1,7 @@
 ## Docker là gì?
 
 - Docker là một nền tảng mã nguồn mở giúp các nhà phát triển xây dựng, triển khai, chạy, cập nhật và quản lý các ứng dụng container hóa.
-- Docker cho phép **đóng gói ứng dụng** và tất cả các phụ thuộc của nó **vào một đơn vị tiêu chuẩn gọi là container**, giúp ứng dụng có thể c**hạy một cách nhất quán trên nhiều môi trường khác nhau**.
+- Docker cho phép **đóng gói ứng dụng** và tất cả các phụ thuộc của nó **vào một đơn vị tiêu chuẩn gọi là container**, giúp ứng dụng có thể **chạy một cách nhất quán trên nhiều môi trường khác nhau**.
 
 ## Docker Engine là gì?
 
@@ -60,3 +60,5 @@
 https://kungfutech.edu.vn/khoa-hoc/docker
 
 http://192.168.75.115:9090/hello
+
+## Dockerfile
