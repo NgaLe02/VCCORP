@@ -1,13 +1,14 @@
 ## Docker là gì?
 
 - Docker là một nền tảng mã nguồn mở giúp các nhà phát triển xây dựng, triển khai, chạy, cập nhật và quản lý các ứng dụng container hóa.
-- Docker cho phép đóng gói ứng dụng và tất cả các phụ thuộc của nó vào một đơn vị tiêu chuẩn gọi là container, giúp ứng dụng có thể chạy một cách nhất quán trên nhiều môi trường khác nhau.
+- Docker cho phép **đóng gói ứng dụng** và tất cả các phụ thuộc của nó **vào một đơn vị tiêu chuẩn gọi là container**, giúp ứng dụng có thể c**hạy một cách nhất quán trên nhiều môi trường khác nhau**.
 
 ## Docker Engine là gì?
 
 - **Docker engine** là một phần mền dạng “client-server” bao gồm các thành phần chính sau:
   - **Server** hay còn được gọi là **docker daemon (dockerd)**: chịu trách nhiệm tạo, quản lý các **Docker objects** như **images**, **containers**, **networks**, **volume**.
-  - **REST API**: là nơi nhận các yêu cầu từ phía **Docker client** và giao tiếp với **Docker daemon** để yêu cầu **Docker daemon** thực thi các yêu cầu từ phía người dùng. -**Docker CLI** có vai trò là client, cung cấp giao diện tương tác với người dùng (command line) và gửi các request tương ứng đến Docker Daemon thông qua REST API. (Ví dụ docker images, docker ps, docker rmi image v.v..)
+  - **REST API**: là nơi nhận các yêu cầu từ phía **Docker client** và giao tiếp với **Docker daemon** để yêu cầu **Docker daemon** thực thi các yêu cầu từ phía người dùng.
+  - **Docker CLI** có vai trò là client, cung cấp giao diện tương tác với người dùng (command line) và gửi các request tương ứng đến Docker Daemon thông qua REST API. (Ví dụ docker images, docker ps, docker rmi image v.v..)
     ![alt text](image.png)
 
 ## Kiến trúc của Docker
@@ -55,8 +56,6 @@
 
     https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
     https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
-
-https://kungfutech.edu.vn/bai-viet/docker/docker-la-gi
 
 https://kungfutech.edu.vn/khoa-hoc/docker
 
