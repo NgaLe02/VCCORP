@@ -15,6 +15,8 @@
 
 ## JWT
 
+-refer: [JWT]https://gpcoder.com/5827-gioi-thieu-json-web-token-jwt/
+
 ## Basic Auth
 
 - `Basic Auth` là cơ chế xác thực đơn giản nhất của một ứng dụng web. Cách hoạt động của Basic Auth là gửi chính **username + password** của người dùng theo mỗi request.
