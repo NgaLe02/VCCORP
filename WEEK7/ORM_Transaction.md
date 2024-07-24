@@ -4,6 +4,16 @@
 
 ## Transactions
 
+### Các thuộc tính của Transactions => ACID
+
+#### Atomicity (Tính nguyên tử)
+
+#### Consistency (Tính nhất quán)
+
+#### Isolation (Tính độc lập)
+
+#### Durability (Tính bền vững)
+
 ### Vấn đề đọc ghi dữ liệu của 1 row khi nó dính đễn transaction
 
 - `Read uncommited`: Khi transaction thực hiện ở mức này, các truy vấn vẫn có thể truy nhập vào các bản ghi đang được cập nhật bởi một transaction khác và nhận được dữ liệu tại thời điểm đó mặc dù dữ liệu đó chưa được commit (uncommited data) => dirty read
