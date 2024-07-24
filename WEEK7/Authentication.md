@@ -15,7 +15,7 @@
 
 ## JWT
 
--refer: [JWT]https://gpcoder.com/5827-gioi-thieu-json-web-token-jwt/
+-refer: [JWT](https://gpcoder.com/5827-gioi-thieu-json-web-token-jwt/)
 
 ## Basic Auth
 
