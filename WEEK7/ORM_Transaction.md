@@ -4,17 +4,32 @@
 
 ## Transactions
 
+### Khái niệm
+
+- Transaction là một tiến trình xử lý có xác định điểm đầu và điểm cuối, được chia nhỏ thành các operation (phép thực thi) , tiến trình được thực thi một cách tuần tự và độc lập các operation đó theo nguyên tắc hoặc tất cả đều thành công hoặc một operation thất bại thì toàn bộ tiến trình thất bại.
+- Nếu việc thực thi một operation nào đó bị fail (hỏng) đồng nghĩa với việc dữ liệu phải rollback (trở lại) trạng thái ban đầu.
+
 ### Các thuộc tính của Transactions => ACID
 
 #### Atomicity (Tính nguyên tử)
 
+- Mọi thay đổi về mặt dữ liệu phải được thục hiện trọn vẹn khi transaction thực hiện thành công hoặc không có bất kì sự thay đổi nào về mặt dữ liệu nếu có xẩy ra sự cố.
+
 #### Consistency (Tính nhất quán)
+
+- Sau khi một transaction kết thúc thì tất cả dữ liệu phải được nhất quán dù thành công hay thất bại.
 
 #### Isolation (Tính độc lập)
 
+- Các transaction khi đông thời thực thi trên hệ thống thì không có bất kì ảnh hưởng gì tời nhau.
+
 #### Durability (Tính bền vững)
 
+- Sau khi một transaction thành công thì tác dụng mà nó tạo ra phải bền vững trong cơ sở dữ liệu cho dù hệ thống có xẩy ra lỗi.
+
 ### Vấn đề đọc ghi dữ liệu của 1 row khi nó dính đễn transaction
+
+- Refer: [T1](https://viblo.asia/p/tim-hieu-ve-transactions-maGK73xeKj2)
 
 - `Read uncommited`: Khi transaction thực hiện ở mức này, các truy vấn vẫn có thể truy nhập vào các bản ghi đang được cập nhật bởi một transaction khác và nhận được dữ liệu tại thời điểm đó mặc dù dữ liệu đó chưa được commit (uncommited data) => dirty read
 
