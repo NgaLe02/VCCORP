@@ -15,7 +15,11 @@
 
 ## JWT
 
--refer: [JWT](https://gpcoder.com/5827-gioi-thieu-json-web-token-jwt/)
+- JSON Web Token (JWT) là 1 tiêu chuẩn mở (RFC 7519), định nghĩa cách thức truyền tin an toàn giữa các ứng dụng bằng một đối tượng **JSON**.
+
+- Dữ liệu truyền đi sẽ được _mã hóa_ và _chứng thực_, có thể được _giải mã_ để lấy lại thông tin và đánh dấu tin cậy _nhờ vào “chữ ký”_ của nó. Phần chữ ký của JWT sẽ được *mã hóa*lại bằng **HMAC** hoặc **RSA**.
+
+- refer: [JWT](https://gpcoder.com/5827-gioi-thieu-json-web-token-jwt/)
 
 ## Basic Auth
 
@@ -28,6 +32,8 @@
 - `Token-based Authentication` là cơ chế xác thực người dùng dựa trên việc tạo ra **token** – một chuỗi ký tự (thường được mã hóa) mang **thông tin xác định người dùng** được **server tạo ra** và **lưu ở client**. Server sau đó có thể **không lưu lại** token này.
 
 ![alt text](image-1.png)
+
+## So sánh
 
 | ĐẶC ĐIỂM    | BASIC                            | TOKEN-BASED                                              |
 | ----------- | -------------------------------- | -------------------------------------------------------- |
