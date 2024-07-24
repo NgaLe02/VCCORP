@@ -2,6 +2,33 @@
 
 ## ORMs
 
+### Khái niệm
+
+- ORM (Object-Relational Mapping) là một kỹ thuật lập trình giúp ánh xạ cấu trúc của cơ sở dữ liệu quan hệ phức tạp vào các đối tượng trong phần mềm được viết bằng các ngôn ngữ hướng đối tượng
+
+### Các loại ORMs
+
+- Có nhiều loại ORM được sử dụng trong lập trình, nhưng hai loại phổ biến nhất là **Active Record** và **Data Mapper**.
+
+  - **Active Record** cho phép các đối tượng được định nghĩa bởi các lớp được kết nối với các bảng trong cơ sở dữ liệu.
+    ![alt text](image-5.png)
+  - **Data Mapper** tách biệt đối tượng khỏi cơ sở dữ liệu và tập trung vào việc ánh xạ các đối tượng vào các bảng dữ liệu.
+    ![alt text](image-6.png)
+
+### Hoạt động
+
+ORM giải quyết vấn đề đồng bộ giữa kiểu dữ liệu trả về khác nhau. Một bên là cơ sở dữ liệu, ở đó dữ liệu được thể hiện dưới dạng tập hợp các bản ghi. Một bên là các đối tượng, ở đó dữ liệu đc hiện thị dưới dạng object
+
+### ORMs trong Java
+
+- Hibernate
+- TopLink
+- EclipseLink
+- OpenJPA
+- MyBatis (formally known as iBatis)
+
+- Refer: [T1](https://viblo.asia/p/object-relational-mapping-djeZ1PQ3KWz)
+
 ## Transactions
 
 ### Khái niệm
