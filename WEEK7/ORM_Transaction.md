@@ -27,9 +27,9 @@
 
 - Sau khi một transaction thành công thì tác dụng mà nó tạo ra phải bền vững trong cơ sở dữ liệu cho dù hệ thống có xẩy ra lỗi.
 
-### Vấn đề đọc ghi dữ liệu của 1 row khi nó dính đễn transaction
-
 - Refer: [T1](https://viblo.asia/p/tim-hieu-ve-transactions-maGK73xeKj2)
+
+### Vấn đề đọc ghi dữ liệu của 1 row khi nó dính đễn transaction
 
 - `Read uncommited`: Khi transaction thực hiện ở mức này, các truy vấn vẫn có thể truy nhập vào các bản ghi đang được cập nhật bởi một transaction khác và nhận được dữ liệu tại thời điểm đó mặc dù dữ liệu đó chưa được commit (uncommited data) => dirty read
 
