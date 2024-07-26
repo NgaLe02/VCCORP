@@ -81,6 +81,9 @@
 
 ### 7. ZooKeepers
 
+- ZooKeepers được sử dụng để quản lý, lưu trữ metadata của clusters và điều phối các consumers.
+  ![alt text](image-14.png)
+
 ## Refer
 
 https://www.youtube.com/watch?v=HGywc-e5f4E&list=PLsfLgp1K1xQ42CWP8dsIa7OT2EJFnRGGd
