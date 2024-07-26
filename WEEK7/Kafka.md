@@ -86,7 +86,7 @@
 
 ## Refer
 
-[K1](https://www.youtube.com/watch?v=HGywc-e5f4E&list=PLsfLgp1K1xQ42CWP8dsIa7OT2EJFnRGGd)
+[Video](https://www.youtube.com/watch?v=HGywc-e5f4E&list=PLsfLgp1K1xQ42CWP8dsIa7OT2EJFnRGGd)
 [K2](https://topdev.vn/blog/kafka-la-gi/)
 [k3](https://200lab.io/blog/kafka-la-gi/)
 [QuickStart](https://kafka.apache.org/quickstart)
