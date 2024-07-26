@@ -70,13 +70,13 @@
 - Consumers hoạt động trong một consumer group, làm việc cùng nhau để xử lý dữ liệu từ các partitions
 
 - Khi một consumer group đọc các event từ các partitions, chúng ta có 3 trường hợp xảy ra như sau:
-  - Trường hợp 1: Consumer group có số consumers nhỏ hơn số partitions của một topic.
+  - Trường hợp 1: Consumer group có số consumers **nhỏ hơn** số partitions của một topic.
     - Consumer 1 và 2 lần lượt đọc các event từ 4 partitions của Topic T1.
       ![alt text](image-11.png)
-  - Trường hợp 2: Consumer group có số consumers bằng số partitions của một topic.
+  - Trường hợp 2: Consumer group có số consumers **bằng** số partitions của một topic.
     - Mỗi consumer sẽ đọc event từ một partition tương ứng.
       ![alt text](image-12.png)
-  - Trường hợp 3: Consumer group có số consumers lớn hơn số partitions của một topic.
+  - Trường hợp 3: Consumer group có số consumers **lớn hơn** số partitions của một topic.
     ![alt text](image-13.png)
 
 ### 7. ZooKeepers
@@ -94,5 +94,7 @@
 ## Cmd
 
 - Windows:
-  - Start the ZooKeeper service: bin\windows\zookeeper-server-start.bat config\zookeeper.properties
-  - Start the Kafka broker service: bin\windows\kafka-server-start.bat config\server.properties
+  - **Start the ZooKeeper service**: bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+  - **Start the Kafka broker service**: bin\windows\kafka-server-start.bat config\server.properties
+  - **Start the Kafka broker service 2**: bin\windows\kafka-server-start.bat config\server.properties --override listeners=PLAINTEXT://:9093 --override broker.id=1 --override log.dirs=/tmp/kafka-logs-1
+  - **Start the Kafka broker service 3**: bin\windows\kafka-server-start.bat config\server.properties --override listeners=PLAINTEXT://:9094 --override broker.id=2 --override log.dirs=/tmp/kafka-logs-2
