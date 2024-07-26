@@ -86,9 +86,12 @@
 
 ## Refer
 
-https://www.youtube.com/watch?v=HGywc-e5f4E&list=PLsfLgp1K1xQ42CWP8dsIa7OT2EJFnRGGd
-https://topdev.vn/blog/kafka-la-gi/
-https://200lab.io/blog/kafka-la-gi/
+[K1](https://www.youtube.com/watch?v=HGywc-e5f4E&list=PLsfLgp1K1xQ42CWP8dsIa7OT2EJFnRGGd)
+[K2](https://topdev.vn/blog/kafka-la-gi/)
+[k3](https://200lab.io/blog/kafka-la-gi/)
 
-bin\windows\zookeeper-server-start.bat config\zookeeper.properties
-bin\windows\kafka-server-start.bat config\server.properties
+## Cmd
+
+- Windows:
+  - Run zookeeper: bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+  - Run Kafka server: bin\windows\kafka-server-start.bat config\server.properties
