@@ -71,11 +71,11 @@
 
 - Khi một consumer group đọc các event từ các partitions, chúng ta có 3 trường hợp xảy ra như sau:
   - Trường hợp 1: Consumer group có số consumers nhỏ hơn số partitions của một topic.
-    Consumer 1 và 2 lần lượt đọc các event từ 4 partitions của Topic T1.
-    ![alt text](image-11.png)
+    - Consumer 1 và 2 lần lượt đọc các event từ 4 partitions của Topic T1.
+      ![alt text](image-11.png)
   - Trường hợp 2: Consumer group có số consumers bằng số partitions của một topic.
-    Mỗi consumer sẽ đọc event từ một partition tương ứng.
-    ![alt text](image-12.png)
+    - Mỗi consumer sẽ đọc event từ một partition tương ứng.
+      ![alt text](image-12.png)
   - Trường hợp 3: Consumer group có số consumers lớn hơn số partitions của một topic.
     ![alt text](image-13.png)
 
