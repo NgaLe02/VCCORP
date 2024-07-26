@@ -30,6 +30,57 @@
 
 ### 3. Kafka Brokers và Kafka Clusters
 
+- Kafka cluster là một set các server, mỗi một set này được gọi là 1 broker
+
+- Brokers chịu trách nhiệm quản lý bộ lưu trữ, xử lý các yêu cầu đọc và ghi cũng như sao chép dữ liệu trên toàn cluster (cụm).
+
+### 4. Kafka Partitions và Kafka Replication
+
+- Đây là nơi dữ liệu cho một topic được lưu trữ. Một topic có thể có một hay nhiều partition.
+
+- Trên mỗi partition thì dữ liệu lưu trữ cố định và được gán cho một ID gọi là offset, bắt đầu từ 0 và tăng dần cho mỗi event tiếp theo. Offset được sử dụng để xác định vị trí của event trong một partition.
+
+- Kafka đảm bảo độ bền của dữ liệu bằng cách sao chép dữ liệu (replication) trên nhiều brokers. Mỗi partition có thể có một hoặc nhiều replica (bản sao) trên các brokers khác nhau, ngăn ngừa mất dữ liệu trong trường hợp broker lỗi.
+  ![alt text](image-9.png)
+
+- Mỗi partition có một broker được chỉ định làm leader, nắm quyền sở hữu partition đó, trong khi các brokers còn lại lưu trữ các replicas (bản sao) của phân vùng đó được gọi là followers.
+
+- Nếu leader broker xảy ra lỗi, một trong những followers có dữ liệu cập nhật sẽ được chọn làm leader mới.
+
+### 5. Kafka Producers
+
+- Kafka Producer là một client appication (ứng dụng khách), publish (xuất bản) event vào một topic cụ thể trong Kafka và luôn ghi vào leader broker
+
+- Theo mặc định, producers không quan tâm tới event được ghi ở partition nào mà sẽ publish đều event trên tất cả partition của một topic. Trong vài trường hợp, một producer sẽ gửi trực tiếp event tới các partition cụ thể.
+
+- Tổng quan về các thành phần trong Kafka producers:
+  ![alt text](image-10.png)
+
+- Quá trình gửi event từ Kafka producers tới Kafka brokers bao gồm 4 bước:
+  - Bước 1: Tạo ProducerRecord
+  - Bước 2: Serializer
+  - Bước 3: Xác định số partitions
+  - Bước 4: Brokers xử lý events và trả về kết quả cho producers
+- Refer: [hehe](https://200lab.io/blog/kafka-la-gi/)
+
+### 6. Kafka Consumers
+
+- Kafka consumer là một client application (ứng dụng khách), subscribe (đăng ký) một hoặc nhiều Kafka topics và đọc các bản ghi theo thứ tự chúng được tạo ra
+
+- Consumers hoạt động trong một consumer group, làm việc cùng nhau để xử lý dữ liệu từ các partitions
+
+- Khi một consumer group đọc các event từ các partitions, chúng ta có 3 trường hợp xảy ra như sau:
+  - Trường hợp 1: Consumer group có số consumers nhỏ hơn số partitions của một topic.
+    Consumer 1 và 2 lần lượt đọc các event từ 4 partitions của Topic T1.
+    ![alt text](image-11.png)
+  - Trường hợp 2: Consumer group có số consumers bằng số partitions của một topic.
+    Mỗi consumer sẽ đọc event từ một partition tương ứng.
+    ![alt text](image-12.png)
+  - Trường hợp 3: Consumer group có số consumers lớn hơn số partitions của một topic.
+    ![alt text](image-13.png)
+
+### 7. ZooKeepers
+
 ## Refer
 
 https://www.youtube.com/watch?v=HGywc-e5f4E&list=PLsfLgp1K1xQ42CWP8dsIa7OT2EJFnRGGd
