@@ -26,6 +26,7 @@
 ## CQRS và Event Sourcing
 
 - CQRS (Command Query Responsibility Segregation): Một kiến trúc phần mềm tách biệt các hoạt động đọc và viết dữ liệu.
+- [CQRS](https://www.youtube.com/watch?v=VUcE_s0RoiY)
 - https://viblo.asia/p/microservices-cung-voi-cqrs-va-event-sourcing-1Je5EDnYlnL
 
 - Search: exampr project ddd cqrs & event sourcing, kafka
