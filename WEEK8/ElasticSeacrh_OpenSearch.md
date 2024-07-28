@@ -12,7 +12,7 @@
 
 - ES sẽ chạy một cổng (dưới local default là 9200).
 
-## Các khái niệm cần biết
+## Elasticsearch component
 
 ![alt text](image-3.png)
 
@@ -50,3 +50,40 @@ Inverted index tương ứng:
 | quick | X | |
 | summer | | X |
 | the | X | |
+
+### 3. Shard
+
+- Một Index có thể được chia thành nhiều shard.
+- Mỗi node bao gồm nhiều Shard
+- Shard lưu trữ dữ liệu.
+- Có 2 loại Shard là : primary shard và replica shard.
+- In order for this to be fault tolerant, the replicas can never be allocated on the same node as primary shard that they replicate.
+  ![alt text](image-4.png)
+
+#### 3.1 : Primary Shard
+
+- Primary Shard là sẽ lưu trữ dữ liệu và đánh index . Sau khi đánh xong dữ liệu sẽ được vận chuyển tới các Replica Shard.
+- Mặc định của Elasticsearch là mỗi index sẽ có 5 Primary shard và với mỗiPrimary shard thì sẽ đi kèm với 1 Replica Shard.
+
+#### 3.2 : Replica Shard
+
+- eplica Shard đúng như cái tên của nó, nó là nơi lưu trữ dữ liệu nhân bản của Primary Shard
+- Replica Shard có vai trò đảm bảo tính toàn vẹn của dữ liệu khi Primary Shardxảy ra vấn đề.
+- Ngoài ra Replica Shard có thể giúp tăng cường tốc độ tìm kiếm vì chúng ta có thể setup lượng Replica Shard nhiều hơn mặc định của ES
+
+### 4. Node
+
+- Là trung tâm hoạt động của Elasticsearch. Là nơi lưu trữ dữ liệu ,tham gia thực hiện đánh index cúa cluster cũng như thực hiện các thao tác tìm kiếm
+- Mỗi node được định danh bằng 1 unique name
+
+### 5. Cluster
+
+- Tập hợp các nodes hoạt động cùng với nhau, chia sẽ cùng thuộc tính cluster.name. Chính vì thế Cluster sẽ được xác định bằng 1 ‘unique name’.
+- Mỗi cluster có một node chính (master), được lựa chọn một cách tự động và có thể thay thế nếu sự cố xảy ra. Một cluster có thể gồm 1 hoặc nhiều nodes. Các nodes có thể hoạt động trên cùng 1 server .
+
+## Refer
+
+- [ES1](https://200lab.io/blog/elastic-search-la-gi/#21-c%C3%A1ch-elasticsearch-t%E1%BB%95-ch%E1%BB%A9c-l%C6%B0u-tr%E1%BB%AF-d%E1%BB%AF-li%E1%BB%87u)
+- [ES2](https://stringee.com/vi/blog/post/elasticsearch-la-gi)
+- [ES3](https://topdev.vn/blog/elasticsearch-la-gi/)
+- [ES4](https://devopsideas.com/different-elasticsearch-components-and-what-they-mean-in-5-mins/)

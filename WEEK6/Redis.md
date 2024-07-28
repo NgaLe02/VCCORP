@@ -45,8 +45,8 @@
 - https://fptshop.com.vn/tin-tuc/danh-gia/redis-la-gi-173207
 - https://topdev.vn/blog/redis-la-gi/?utm_source=google&utm_medium=cpc&utm_campaign=pmax-company&utm_content=performance&gad_source=1&gclid=CjwKCAjw1920BhA3EiwAJT3lSRck2xzEIjXALAe1oKOeQgTnHWKPtTL5KLa_aD5UgqQfC7Pg9gpTWhoCAsoQAvD_BwE
 
-https://www.youtube.com/watch?v=0pOVQCDEcxI
-
+- [Install Jmeter](https://www.youtube.com/watch?v=0pOVQCDEcxI)
+- [Project ](https://github.com/jeonguk/spring-mysql-redis-cache/blob/master/src/main/java/com/jeonguk/web/service/impl/PostServiceImpl.java)
 - cd bin/
 - ./jmeter
 

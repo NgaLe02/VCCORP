@@ -54,10 +54,10 @@
 
       - Service cho phép bạn mở rộng các contaner thông qua nhiều Docker daemon, chúng giao tiếp với nhau thông qua swarm cluster bao gồm nhiều manager và worker. Mỗi một node của swarm là 1 Docker daemon giao tiếp với nhau bằng cách sử dụng Docker API. Theo mặc định thì service được cân bằng tải trên các node.
 
-    https://www.youtube.com/watch?v=WX0YLs1Jnjs&list=PLncHg6Kn2JT4kLKJ_7uy0x4AdNrCHbe0n&index=13
+  [Course Docker](https://www.youtube.com/watch?v=WX0YLs1Jnjs&list=PLncHg6Kn2JT4kLKJ_7uy0x4AdNrCHbe0n&index=13)
 
-    https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
-    https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
+  https://blog.cloud365.vn/container/tim-hieu-docker-phan-3/
+  https://tel4vn.edu.vn/blog/gioi-thieu-tong-quan-ve-kien-truc-cua-docker/
 
 https://kungfutech.edu.vn/khoa-hoc/docker
 
