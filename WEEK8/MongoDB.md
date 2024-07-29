@@ -49,3 +49,10 @@
 - [MongoDB1](https://itviec.com/blog/mongodb-la-gi/)
 - [MongoDB2](https://viblo.asia/p/tim-hieu-ve-mongodb-4P856ajGlY3)
 - [MongoDB3](https://stringee.com/vi/blog/post/mongodb-la-gi)
+- [GraphQLCode](https://www.bezkoder.com/spring-boot-graphql-example/)
+- [GraphQL_MongoDBCode](https://www.bezkoder.com/spring-boot-graphql-mongodb-example-graphql-java/)
+
+## Code demo:
+
+- [Springboot-GraphQL](https://github.com/NgaLe02/spring-boot-graphql-example)
+- [Springboot-GraphQL-MongoDB](https://github.com/NgaLe02/spring-boot-graphql-example/tree/spring-boot-graph-mongodb-example)
