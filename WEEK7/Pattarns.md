@@ -26,8 +26,8 @@
 - **CQRS (Command Query Responsibility Segregation):** Một kiến trúc phần mềm _tách biệt các hoạt động đọc và viết dữ liệu_.
   ![alt text](image-16.png)
 
--** Event Sourcing** is a pattern where the state of an application is _determined by a sequence of events_ instead of just the current state. It involves _capturing all changes to an application’s state as a sequence of events_.
-![alt text](image-17.png)
+- **Event Sourcing** is a pattern where the state of an application is _determined by a sequence of events_ instead of just the current state. It involves _capturing all changes to an application’s state as a sequence of events_.
+  ![alt text](image-17.png)
 
 - **CQRs & Event Sourcing:**
   ![alt text](image-19.png)
