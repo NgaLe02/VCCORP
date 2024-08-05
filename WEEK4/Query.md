@@ -103,12 +103,15 @@ Mỗi hàng trong EXPLAIN chứa các cột sau:
 
 ## Ví dụ về 10 câu query mySQL
 
+- Kịch bản: Gồm các table orders, customer, products. Customer đặt hàng các sản phẩm (product), ta có orders.
+
 ### Ví dụ 1
 
+- Chọn các customer (user) -> tối ưu bằng tạo index
 - Câu query không tốt:
 
 ```
-SELECT \* FROM users WHERE username = 'john';
+SELECT * FROM users WHERE username = 'john';
 ```
 
 ![alt text](image-4.png).
@@ -141,6 +144,8 @@ SELECT \* FROM users WHERE username = 'john';
 
 ### Ví dụ 2
 
+- Chọn các customer, orders của customer -> tối ưu bằng tạo index cho 2 table
+
 - Câu query không tốt:
 
 ```
@@ -161,6 +166,8 @@ SELECT * FROM orders o INNER JOIN customers c ON o.customer_id = c.customer_id;
 
 ### Ví dụ 3
 
+- - Chọn các customer (user) -> tối ưu cách thêm index
+
 - Câu query không tốt:
 
 ```
@@ -177,6 +184,8 @@ SELECT * FROM customers WHERE email LIKE 'j%';
 ```
 
 ![alt text](image-18.png)
+
+- - Chọn các customer (user) -> tối ưu bằng cách không dùng % ở đầu
 
 ### Ví dụ 4
 
@@ -202,6 +211,8 @@ SELECT * FROM customers WHERE email LIKE 'j%';
 
 ### Ví dụ 5
 
+- Chọn các orders -> tối ưu bằng tạo index để order by nhanh hơn
+
 - Câu query không tốt:
 
 ```
@@ -220,6 +231,8 @@ explain select * from orders  ORDER BY amount desc limit 2 ;
 ![alt text](image-21.png)
 
 ### Ví dụ 6
+
+- Chọn các products với điều kiện category, name thỏa mãn -> tối ưu bằng tạo index multi
 
 Ban đầu có
 
@@ -248,6 +261,8 @@ select * from products where category = 'Electronics' and name = "Laptop X";
 
 ### Ví dụ 7
 
+- Chọn các products -> tối ưu bằng tạo index
+
 Ban đầu có
 
 ```
@@ -273,6 +288,8 @@ select * from products   where  name = "Laptop X" and category = 'Electronics' ;
 
 ### Ví dụ 8
 
+- Chọn các customer (user) với điều kiện month thỏa mãn -> tối ưu bằng tạo index
+
 - Câu query không tốt:
 
 ```
@@ -292,6 +309,8 @@ SELECT * FROM USERs WHERE MONTH(registration_date) = 1;
 ![alt text](image-26.png)
 
 ### Ví dụ 9
+
+- Chọn product với category thỏa mãn điều kiện và sắp xếp theo price
 
 - Câu query không tốt:
 
@@ -313,6 +332,7 @@ select * from products where category = 'Electronics' order by price;
 
 ### Ví dụ 10
 
+- Chọn các product với name và description thỏa mãn điều kiện
 - Câu query không tốt:
 
 ```
@@ -327,7 +347,7 @@ Select * from products where name like '%laptop%' or description like '%laptop%'
 
 Alter table products ADD FULLTEXT idx_fulltext(name, description);
 
-Select \* from products where match(name, description) AGAINST ('laptop');
+Select * from products where match(name, description) AGAINST ('laptop');
 
 ```
 
