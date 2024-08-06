@@ -106,3 +106,7 @@
   - wget URL
   - chmod +x ten_file.sh
   - ./ten_file.sh
+
+  - Open offset explorer:
+    - ![alt text](<Screenshot from 2024-08-06 15-27-13.png>)
+    - Bootstrap server: ifconfig
