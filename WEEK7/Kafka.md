@@ -98,3 +98,11 @@
   - **Start the Kafka broker service**: bin\windows\kafka-server-start.bat config\server.properties
   - **Start the Kafka broker service 2**: bin\windows\kafka-server-start.bat config\server.properties --override listeners=PLAINTEXT://:9093 --override broker.id=1 --override log.dirs=/tmp/kafka-logs-1
   - **Start the Kafka broker service 3**: bin\windows\kafka-server-start.bat config\server.properties --override listeners=PLAINTEXT://:9094 --override broker.id=2 --override log.dirs=/tmp/kafka-logs-2
+
+- Install Offset Explorers in Ubuntu:
+  - Access this page https://www.kafkatool.com/download.html 
+  - Copy link address of download linux as URL
+  - Open terminal
+  - wget URL
+  - chmod +x ten_file.sh
+  - ./ten_file.sh
