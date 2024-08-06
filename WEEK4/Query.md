@@ -111,7 +111,7 @@ Mỗi hàng trong EXPLAIN chứa các cột sau:
 - Câu query không tốt:
 
 ```
-SELECT * FROM users WHERE username = 'john';
+SELECT * FROM customers WHERE customer_name = 'John Doe';
 ```
 
 ![alt text](image-4.png).
@@ -125,8 +125,8 @@ SELECT * FROM users WHERE username = 'john';
 - Tối ưu:
 
 ```
-CREATE INDEX idx_username ON users(username);
-SELECT \* FROM users WHERE username = 'john';
+CREATE INDEX idx_customername ON customers(customer_name);
+SELECT * FROM customers WHERE customer_name = 'John Doe';
 ```
 
 ![alt text](image-5.png)
